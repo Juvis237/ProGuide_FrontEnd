@@ -27,6 +27,16 @@ export const loginField = [
         label: `Password`,
     },
 ]
+export const ResetPasswordField = [
+    {
+        name: `password`,
+        label: `New Password`,
+    },
+    {
+        label: 'Confirm Password',
+        name: 'confirm_password',
+    },
+]
 
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
