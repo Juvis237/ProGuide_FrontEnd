@@ -50,7 +50,7 @@ const SignupForm = () => {
                 title={headerSignup}
                 classes="text-white font-bold text-3xl"
             />
-            <Paragraph content={parSignup} />
+            <Paragraph content={parSignup} classes="text-white" />
             <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2">
                 <div className="pb-6">
                     <Header
