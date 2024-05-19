@@ -38,6 +38,24 @@ export const ResetPasswordField = [
     },
 ]
 
+export const whyCardData = [
+    {
+        imgSrc: '/assets/icon-1.png',
+        title: 'Convenience and time management',
+        content: 'We offer a seamless and convenient means for applicants to apply and receive their academic documents without  the need to physically visit school. Students or graduates ned not bother about time and mobility ',
+    },
+    {
+        imgSrc: '/assets/icon-2.png',
+        title: 'Convenience and time management',
+        content: 'We offer a seamless and convenient means for applicants to apply and receive their academic documents without  the need to physically visit school. Students or graduates ned not bother about time and mobility ',
+    },
+    {
+        imgSrc: '/assets/icon-3.png',
+        title: 'Streamline communication',
+        content: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. Ac nisl pretium massa nisi. Neque ac accumsan sodales dignissim nisl. Rutrum sit lacus ultrices viverra sed gravida',
+    },
+]
+
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'

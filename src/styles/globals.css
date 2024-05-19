@@ -13,14 +13,14 @@
         --popover: 0 0% 100%;
         --popover-foreground: 222.2 84% 4.9%;
 
-        --primary: 222.2 47.4% 11.2%;
+        --primary: 216 63% 55%;
         --primary-foreground: 210 40% 98%;
 
         --secondary: 38 100% 55%;
 
         --secondary-foreground: 222.2 47.4% 11.2%;
 
-        --muted: 210 40% 96.1%;
+        --muted: 0 1% 27%;
         --muted-foreground: 215.4 16.3% 46.9%;
 
         --accent: 210 40% 96.1%;
@@ -80,6 +80,14 @@
         background-position: top;
         background-repeat: no-repeat;
         height: 100vh;
+        background-size: contain;
+    }
+    .img-bg-why-us {
+        background-image: url('../../public/assets/Why choose us-bg@2x.png'),
+            url('../../public/assets/Why choose us-bg@2x.png');
+        background-position: top, 0;
+        background-repeat: no-repeat, no-repeat;
+        min-height: 90vh;
         background-size: contain;
     }
 

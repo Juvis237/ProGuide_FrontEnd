@@ -82,7 +82,7 @@ const ResetPassword = () => {
                     />
                     <Paragraph
                         content="You can now enter your new password and proceed"
-                        classes="text-black pb-8"
+                        classes="text-black pb-8 px-8 text-center "
                     />
                 </div>
                 <Form {...form}>

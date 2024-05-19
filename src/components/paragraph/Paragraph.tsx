@@ -6,7 +6,7 @@ interface Props {
 
 const Paragraph: React.FC<Props> = ({ content, classes }) => {
     return (
-        <p className={`text-center py-3 font-2xl px-8 ${classes}`}>{content}</p>
+        <p className={`py-3 font-2xl ${classes}`}>{content}</p>
     )
 }
 
