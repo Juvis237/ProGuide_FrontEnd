@@ -19,7 +19,7 @@ const Hero = () => {
             />
             <Paragraph
                 content="Skip the lines and manage everything from your phone. Request, track and manage all your academic documents."
-                classes="px-0"
+                classes="px-0 text-center"
             />
         </div>
     )

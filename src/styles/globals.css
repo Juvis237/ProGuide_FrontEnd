@@ -90,6 +90,12 @@
         min-height: 90vh;
         background-size: contain;
     }
+    /* .request-now-bg {
+        background-image: url('../../public/assets/onboarding-CTA-bg.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+    } */
 
     .box-shadow-2 {
         box-shadow: 0px 4px 8px -2px hsla(220, 43%, 11%, 0.25);
