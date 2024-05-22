@@ -1,3 +1,5 @@
+import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
+
 export const signupField = [
     {
         label: 'Username',
@@ -71,6 +73,29 @@ export const howWeWorkData = [
         icon: '/assets/three.png',
         title: 'Admin approval',
         content: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. Ac nisl pretium massa nisi. Neque ac accumsan sodales dignissim nisl. Rutrum sit lacus ultrices viverra sed gravida'
+    },
+]
+
+export const dashboardLink = [
+    {
+        icon: faHouse,
+        link: '/dashboard',
+        name: 'Dashboard'
+    },
+    {
+        icon: faCodePullRequest,
+        link: '/request-now',
+        name: 'Request'
+    },
+    {
+        icon: faMagnifyingGlassChart,
+        link: '/profile',
+        name: 'Tracking'
+    },
+    {
+        icon: faFile,
+        link: '/my-docs',
+        name: 'My Docs'
     },
 ]
 

@@ -49,7 +49,7 @@ const Login = () => {
                 content={parLogin}
                 classes="text-white px-8 text-center "
             />
-            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2">
+            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%]">
                 <div className="pb-6">
                     <Header
                         title="Login"
@@ -132,12 +132,12 @@ const Login = () => {
                                 Forgot password ?
                             </div>{' '}
                         </Link>
-                        <div className="w-full flex items-center justify-center">
+                        <div className="w-full flex items-center justify-center pb-4">
                             <Button
                                 type="submit"
                                 className="px-8 py-5 bg-secondary"
                             >
-                                Submit
+                                Login
                             </Button>
                         </div>
                     </form>
