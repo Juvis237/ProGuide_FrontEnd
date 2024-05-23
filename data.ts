@@ -99,6 +99,56 @@ export const dashboardLink = [
     },
 ]
 
+export const requestStatus = [
+    'all', 'pending', 'in progress', 'completed', 'rejected'
+]
+
+export const requestData = [
+    {
+        title: 'Transcript',
+        id: '#12345',
+        status: 'in progress'
+    },
+    {
+        title: 'English Proficiency',
+        id: '#12345',
+        status: 'completed'
+    },
+    {
+        title: 'Transcript',
+        id: '#12345',
+        status: 'in progress'
+    },
+    {
+        title: 'English Proficiency',
+        id: '#12345',
+        status: 'completed'
+    },
+]
+
+export const dashboardSummaryData = [
+    {
+        count: '10',
+        option: 'attestations',
+    },
+    {
+        count: '05',
+        option: 'transcripts',
+    },
+    {
+        count: '01',
+        option: 'certificates',
+    },
+    {
+        count: '01',
+        option: 'certificates',
+    },
+    {
+        count: '01',
+        option: 'certificates',
+    },
+]
+
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'

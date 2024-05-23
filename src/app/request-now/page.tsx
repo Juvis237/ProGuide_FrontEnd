@@ -4,7 +4,7 @@ import AppLayout from '../AppLayout'
 const page = () => {
     return (
         <AppLayout>
-            <div>RequestNow</div>
+            <div className="px-4"></div>
         </AppLayout>
     )
 }
