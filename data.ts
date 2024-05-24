@@ -155,3 +155,30 @@ export const parLogin = 'Welcome back! Let’s pick up from where you ended'
 export const parFogotPassword = 'Let’s  help your recover your ProGuide account'
 
 export const socialIcon = ['/assets/google-logo.png', '/assets/facebook-lite-logo.png', '/assets/x-logo.png']
+
+export const myDocumentData = [
+    {
+        id: 1,
+        name: 'Transcript',
+        dateReceived: new Date('2023-01-15'),
+        link: 'https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf',
+    },
+    {
+        id: 2,
+        name: 'English Proficiency',
+        dateReceived: new Date('2023-02-20'),
+        link: 'https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf',
+    },
+    {
+        id: 3,
+        name: 'English Proficiency',
+        dateReceived: new Date('2023-02-24'),
+        link: 'https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf',
+    },
+    {
+        id: 4,
+        name: 'Certificate',
+        dateReceived: new Date('2023-03-10'),
+        link: 'https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf',
+    }
+];
