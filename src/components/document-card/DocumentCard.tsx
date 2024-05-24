@@ -26,7 +26,7 @@ const DocumentCard: React.FC<Props> = ({ document, onPreview }) => {
                 </a>
             </div>
             <div className="flex justify-end">
-                <a download href={document.link} className="flex gap-2 bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded bg-[#1C1C1C]">
+                <a download href={document.link} className="flex gap-2 hover:bg-[#1C1C1C] text-white py-2 px-4 rounded bg-[#2F2F2F]">
                     <p>Download</p>
                     <span className='text-2xl'>
                         <DownloadIcon className="h-5 w-5"/>
