@@ -149,6 +149,97 @@ export const dashboardSummaryData = [
     },
 ]
 
+export const step1Fields = [
+    {
+        name: `my_school`,
+        label: `What is your school?`,
+    },
+    {
+        name: `doc_type`,
+        label: `What type of document do you want?`,
+    },
+    {
+        name: `num_doc`,
+        label: `Number of documents requested`,
+    },
+    {
+        name: `trans_mode`,
+        label: `Transaction mode`,
+    },
+]
+
+export const step2Fields = [
+    {
+        name: `name`,
+        label: `Name`,
+    },
+    {
+        name: `matricule`,
+        label: `Matricule of applicant`,
+    },
+    {
+        name: `faculty`,
+        label: `Faculty`,
+    },
+    {
+        name: `department`,
+        label: `Department`,
+    },
+    {
+        name: `level`,
+        label: `Level`,
+    },
+]
+
+export const step3Fields = [
+    {
+        name: `payment_mode`,
+        label: `How would you like to pay`,
+    },
+    {
+        name: `phone`,
+        label: `Phone number`,
+    }
+]
+
+export const steps = [
+    {
+        id: 'Step 1',
+        name: 'Document information',
+        description: 'Let’s begin your application process. Please fill in the  form below',
+        fields: ['my_school', 'doc_type', 'num_doc', 'trans_mode'],
+        label: [`What is your school?`,
+            `What type of document do you want?`,
+            `Number of documents requested`,
+            `Transaction mode`,
+        ],
+    },
+    {
+        id: 'Step 2',
+        name: 'Applicant Information',
+        description: 'Please enter the relevant applicant information',
+        fields: ['name', 'matricule', 'faculty', 'department', 'level'],
+        label: ['Name', 'Matricule of applicant', 'Faculty', 'Department', 'Level'],
+    },
+    {
+        id: 'Step 3',
+        name: 'Make Payments',
+        description: 'You can now pay for your desired document to complete the process',
+        fields: ['payment_mode', 'phone'],
+        label: ['How would you like to pay', 'Phone number',],
+    },
+]
+
+export const summaryLabel = [{ label: 'Name of applicant', name: 'name' },
+{ label: 'Matricule of applicant', name: 'matricule' },
+{ label: 'School', name: 'my_school' },
+{ label: 'Faculty', name: 'faculty' },
+{ label: 'Department', name: 'department' },
+{ label: 'Level', name: 'level' },
+{ label: 'Document type', name: 'doc_type' },
+{ label: 'Number of document requested', name: 'num_doc' },
+{ label: 'Transaction mode', name: 'trans_mode' }]
+
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'
