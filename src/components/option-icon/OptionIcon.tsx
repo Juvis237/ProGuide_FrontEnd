@@ -7,13 +7,13 @@ interface Props {
 
 const OptionIcon: React.FC<Props> = ({ imageSrc }) => {
     return (
-        <section className="w-12 h-12 rounded-xl p-3 flex items-center justify-center bg-white box-shadow cursor-pointer">
+        <section className="w-full rounded-xl p-3 flex items-center justify-center bg-white box-shadow cursor-pointer">
             <Image
                 src={imageSrc}
                 height={50}
                 width={100}
                 alt="social-icon"
-                className="w-full h-full"
+                className="w-8 h-8"
             />
         </section>
     )

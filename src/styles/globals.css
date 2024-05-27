@@ -4,6 +4,8 @@
 
 @layer base {
     :root {
+        --font-roboto: 'Roboto', sans-serif;
+
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
 
@@ -133,5 +135,25 @@
     }
     .box-shadow {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .x-y-flex {
+        @apply flex justify-center items-center;
+    }
+}
+
+@layer components {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    button,
+    a,
+    span,
+    div,
+    small {
+        font-family: var(--font-poppins);
     }
 }

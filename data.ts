@@ -6,6 +6,10 @@ export const signupField = [
         name: 'username',
     },
     {
+        label: 'Tel',
+        name: 'phone',
+    },
+    {
         label: 'Email',
         name: 'email',
     },
@@ -245,4 +249,4 @@ export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'
 export const parFogotPassword = 'Let’s  help your recover your ProGuide account'
 
-export const socialIcon = ['/assets/google-logo.png', '/assets/facebook-lite-logo.png', '/assets/x-logo.png']
+export const socialIcon = ['/assets/google-logo.png']

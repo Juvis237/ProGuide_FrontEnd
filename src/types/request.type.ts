@@ -5,7 +5,7 @@ export const documentRequestSchema = z.object({
     doc_type: z.string({
         required_error: 'Please select a document type',
     }),
-    num_doc: z.number({
+    num_doc: z.coerce.number({
         required_error: 'Enter number of document'
     }),
     trans_mode: z.string({
@@ -32,11 +32,7 @@ export const documentRequestSchema = z.object({
     payment_mode: z.string({
         required_error: 'Please select a payment method'
     }),
-    phone: z
-        .string()
-        .min(9, 'Contact must be at least 9 characters long')
-        .refine(
-            (value) => !/[a-zA-Z]/.test(value),
-            'Contact can not contain letters',
-        ),
+    phone: z.
+        coerce.number()
+        .min(9, 'Contact must be at least 9 characters long'),
 })
