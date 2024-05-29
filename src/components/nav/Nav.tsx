@@ -12,7 +12,7 @@ const Nav = () => {
                     className="py-6 px-4 bg-secondary text-white hover:bg-none"
                     asChild
                 >
-                    <Link href={'/sign-up'}>
+                    <Link href={'/get-started'}>
                         Get Started <ArrowRightIcon className="ml-2 h-4 w-4" />
                     </Link>
                 </Button>
