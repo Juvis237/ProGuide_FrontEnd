@@ -19,6 +19,7 @@ import FormStep2 from '../form-step-2/FormStep2'
 import FormStep3 from '../form-step-3/FormStep3'
 import { Form } from '../ui/form'
 import { Button } from '../ui/button'
+import HeaderNav from '../header-nav/HeaderNav'
 
 const RequestContainer = () => {
     type FieldName = keyof z.infer<typeof documentRequestSchema>
@@ -107,7 +108,13 @@ const RequestContainer = () => {
 
     return (
         <section className="w-full min-h-screen bg-primary">
-            <div className="pt-16">
+            <HeaderNav
+                title="Request"
+                link="/dashboard"
+                imageSrc="/assets/avatar.png"
+                marginTop="pt-8"
+            />
+            <div className="pt-12">
                 <section className="bg-white pt-8 min-h-screen pb-32 px-4 rounded-t-3xl">
                     {proceed ? (
                         <>

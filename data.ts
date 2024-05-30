@@ -248,27 +248,48 @@ export const summaryLabel = [{ label: 'Name of applicant', name: 'name' },
 export const profileData = [
     {
         icon: PencilIcon,
-        label: 'Edit profile'
+        label: 'Edit profile',
+        link: 'profile-edit'
     },
     {
         icon: LockClosedIcon,
-        label: 'Change password'
+        label: 'Change password',
+        link: ''
     },
     {
         icon: ArrowUpTrayIcon,
-        label: 'Logout'
+        label: 'Logout',
+        link: ''
     },
     {
         icon: Cog6ToothIcon,
-        label: 'Settings'
+        label: 'Settings',
+        link: 'settings'
     },
     {
         icon: ExclamationCircleIcon,
-        label: 'About Pro-Guide'
+        label: 'About Pro-Guide',
+        link: ''
     },
     {
         icon: QuestionMarkCircleIcon,
-        label: 'Contact support'
+        label: 'Contact support',
+        link: 'contact-support'
+    },
+]
+
+export const editProfileField = [
+    {
+        label: 'Username',
+        name: 'username',
+    },
+    {
+        label: 'Email',
+        name: 'email',
+    },
+    {
+        label: 'Contact',
+        name: 'phone',
     },
 ]
 

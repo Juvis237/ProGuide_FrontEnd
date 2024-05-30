@@ -8,16 +8,22 @@ interface Props {
     link: string
     title: string
     imageSrc: string
+    marginTop?: string
 }
 
-const HeaderNav: React.FC<Props> = ({ link, title, imageSrc }) => {
+const HeaderNav: React.FC<Props> = ({ link, title, imageSrc, marginTop }) => {
     return (
-        <div className="flex gap-4 items-center justify-between w-full -mt-16 mb-4 px-4">
+        <div
+            className={`flex gap-4 items-center justify-between w-full ${marginTop ? marginTop : '-mt-10'} mb-4 px-4`}
+        >
             <div className="flex items-center gap-9">
                 <Link className="w-6 cursor-pointer text-white" href={link}>
                     <ArrowLeftIcon />
                 </Link>
-                <Header title={title} classes="text-white font-bold text-2xl" />
+                <Header
+                    title={title}
+                    classes="text-white font-medium text-2xl"
+                />
             </div>
             <div className="flex items-center gap-3">
                 <BellAlertIcon className="w-6 h-6 text-white cursor-pointer" />

@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons'
+import Link from 'next/link'
 import React from 'react'
 
 interface Props {
@@ -9,11 +10,12 @@ interface Props {
             titleId?: string | undefined
         } & React.RefAttributes<SVGSVGElement>
     >
+    link: string
 }
 
-const ProfileTab: React.FC<Props> = ({ label, Icon }) => {
+const ProfileTab: React.FC<Props> = ({ label, Icon, link }) => {
     return (
-        <div
+        <Link href={link}
             className={`cursor-pointer flex justify-between items-center border-b py-3 ${label === 'Logout' && 'text-red-600'}`}
         >
             <div className="flex gap-5">
@@ -23,7 +25,7 @@ const ProfileTab: React.FC<Props> = ({ label, Icon }) => {
                 <p>{label}</p>
             </div>
             <ArrowRightIcon className="w-5 h-5 font-bold" />
-        </div>
+        </Link>
     )
 }
 
