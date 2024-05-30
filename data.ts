@@ -1,4 +1,5 @@
 import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
+import { ArrowUpTrayIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 
 export const signupField = [
     {
@@ -243,6 +244,33 @@ export const summaryLabel = [{ label: 'Name of applicant', name: 'name' },
 { label: 'Document type', name: 'doc_type' },
 { label: 'Number of document requested', name: 'num_doc' },
 { label: 'Transaction mode', name: 'trans_mode' }]
+
+export const profileData = [
+    {
+        icon: PencilIcon,
+        label: 'Edit profile'
+    },
+    {
+        icon: LockClosedIcon,
+        label: 'Change password'
+    },
+    {
+        icon: ArrowUpTrayIcon,
+        label: 'Logout'
+    },
+    {
+        icon: Cog6ToothIcon,
+        label: 'Settings'
+    },
+    {
+        icon: ExclamationCircleIcon,
+        label: 'About Pro-Guide'
+    },
+    {
+        icon: QuestionMarkCircleIcon,
+        label: 'Contact support'
+    },
+]
 
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
