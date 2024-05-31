@@ -6,11 +6,13 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from '../ui/use-toast'
-import { Form, FormControl, FormField, FormItem, FormMessage } from '../ui/form'
+import { Form, FormField, FormItem, FormMessage } from '../ui/form'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline'
+import { usePathname } from 'next/navigation'
 
 const SearchBar = () => {
+    const url = usePathname()
     const FormSchema = z.object({
         search: z.string().min(2, {
             message: 'Username must be at least 2 characters.',
@@ -50,12 +52,15 @@ const SearchBar = () => {
                                         {...field}
                                         className="bg-transparent w-full py-6 border outline-none rounded-3xl pr-24 pl-3"
                                     />
-                                    <Button
-                                        className="py-3 h-full"
-                                        type="button"
-                                    >
-                                        <AdjustmentsHorizontalIcon className=" h-6" />
-                                    </Button>
+                                    {url !== '/contact-support' &&
+                                        url !== '/tracking' && (
+                                            <Button
+                                                className="py-3 h-full"
+                                                type="button"
+                                            >
+                                                <AdjustmentsHorizontalIcon className=" h-6" />
+                                            </Button>
+                                        )}
                                 </div>
                                 <FormMessage />
                             </FormItem>
@@ -64,7 +69,12 @@ const SearchBar = () => {
                     <div className="">
                         <Button
                             type="submit"
-                            className="absolute top-0 right-0 border-none shadow-none py-[1.55rem] rounded-tr-3xl rounded-br-3xl mr-[4.5rem]"
+                            className={`absolute top-0 right-0 border-none shadow-none py-[1.55rem] rounded-tr-3xl rounded-br-3xl ${
+                                url !== '/contact-support' &&
+                                url !== '/tracking'
+                                    ? 'mr-[4.5rem]'
+                                    : ''
+                            }`}
                         >
                             <MagnifyingGlassIcon className="h-8 w-8" />
                         </Button>

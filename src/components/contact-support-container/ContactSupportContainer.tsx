@@ -11,6 +11,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from '@/components/ui/accordion'
+import SearchBar from '../search-bar/SearchBar'
 
 const ContactSupportContainer = () => {
     return (
@@ -47,6 +48,7 @@ const ContactSupportContainer = () => {
                     <small className="text-[0.65rem] text-center block">
                         Frequently asked questions
                     </small>
+                    <SearchBar />
                     <Header title="Top questions" classes="pt-4 font-bold" />
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
