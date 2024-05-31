@@ -27,6 +27,9 @@
         --accent: 148 94% 45%;
         --accent-foreground: 148 88% 93%;
 
+        --foundation: 0 0% 45%;
+
+
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
 
@@ -97,6 +100,12 @@
 
     .dashboard-summary-text {
         color: hsla(0, 0%, 11%, 1);
+    }
+    .contact-us {
+        background: hsla(240, 10%, 72%, 1);
+    }
+    .contact-us-header{
+        background: hsla(216, 53%, 36%, 1);
     }
     .img-bg-why-us {
         background-image: url('../../public/assets/Why choose us-bg@2x.png'),

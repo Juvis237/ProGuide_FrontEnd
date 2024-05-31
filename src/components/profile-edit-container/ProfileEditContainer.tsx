@@ -15,20 +15,16 @@ import {
     FormMessage,
 } from '../ui/form'
 import { Input } from '../ui/input'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { editSchema } from '@/types/edit.type'
 
 const ProfileEditContainer = () => {
-    const router = useRouter()
+    // const router = useRouter()
     const [disableBtn, setDisableBtn] = useState<boolean>(false)
 
-    const editSchema = z.object({
-        username: z.string(),
-        email: z.string().email(),
-        phone: z.coerce.number(),
-    })
     const form = useForm<z.infer<typeof editSchema>>({
         resolver: zodResolver(editSchema),
     })
@@ -36,55 +32,9 @@ const ProfileEditContainer = () => {
     // 2. Define a submit handler.
     const onSubmit = async (values: z.infer<typeof editSchema>) => {
         setDisableBtn(true)
-        // const requestBody = JSON.stringify({
-        //     email: values.email,
-        //     user_name: values.username,
-        //     phone: values.phone ? values.phone : null,
-        //     password: values.password,
-        // })
-        // try {
-        //     const request = await fetch(
-        //         `${process.env.NEXT_PUBLIC_BASE_URL}/register`,
-        //         {
-        //             method: 'POST',
-        //             body: requestBody,
-        //             headers: {
-        //                 'Content-type': 'application/json',
-        //                 Accept: 'application/json',
-        //             },
-        //         },
-        //     )
-        //     const response = await request.json()
-        //     const { header, status, message, data, type } = response
-
-        //     if (status) {
-        //         localStorage.setItem('user', JSON.stringify(data))
-        //         toast({
-        //             variant: 'default',
-        //             title: 'Login Successful',
-        //             description: (
-        //                 <ToastDescription description={`${message}`} />
-        //             ),
-        //         })
-        //         router.push('/dashboard')
-        //     } else {
-        //         toast({
-        //             variant: 'destructive',
-        //             title: 'Login Error',
-        //             description: (
-        //                 <ToastDescription description={`${message}`} />
-        //             ),
-        //         })
-        //         setDisableBtn(false)
-        //     }
-        // } catch (error) {
-        //     toast({
-        //         variant: 'destructive',
-        //         title: 'Login Error',
-        //         description: <ToastDescription description={`${error}`} />,
-        //     })
-        //     setDisableBtn(false)
-        // }
+        setTimeout(() => {
+            setDisableBtn(false)
+        }, 2500)
     }
     return (
         <div className="img-bg flex flex-col items-center justify-center">
@@ -157,7 +107,7 @@ const ProfileEditContainer = () => {
                                     disableBtn || form.formState.isSubmitting
                                 }
                             >
-                                Register
+                                Save Changes
                             </Button>
                         </div>
                     </form>

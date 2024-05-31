@@ -1,5 +1,5 @@
 import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
-import { ArrowUpTrayIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowUpTrayIcon, CalendarIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 
 export const signupField = [
     {
@@ -94,7 +94,7 @@ export const dashboardLink = [
     },
     {
         icon: faMagnifyingGlassChart,
-        link: '/profile',
+        link: '/tracking',
         name: 'Tracking'
     },
     {
@@ -290,6 +290,51 @@ export const editProfileField = [
     {
         label: 'Contact',
         name: 'phone',
+    },
+]
+export const contactUs = [
+    {
+        label: 'Username',
+        name: 'username',
+    },
+    {
+        label: 'Email',
+        name: 'email',
+    },
+    {
+        label: 'Message title',
+        name: 'message_title',
+    },
+    {
+        label: '',
+        name: 'message',
+    },
+]
+
+export const notificationData = [
+    {
+        title: 'Transcript now available',
+        description: 'Your transcript is now ready from the admin. Check My Docs to download',
+        time: '2 days ago',
+        icon: CalendarIcon
+    },
+    {
+        title: 'Payment completed',
+        description: 'Payment for your English proficiency has just been received. A sum of XAF4,500 has been deducted from your mobile money account',
+        time: '6 days ago',
+        icon: CalendarIcon
+    },
+    {
+        title: 'Application pending',
+        description: 'Your application has been successfully submitted. it will soon be assigned an agent',
+        time: '20th May 2024',
+        icon: CalendarIcon
+    },
+    {
+        title: 'Your document has been rejected',
+        description: 'Document with ID number #123456 has been rejected possibly because the matricule didn’t match the applicant name',
+        time: '20th May 2024',
+        icon: CalendarIcon
     },
 ]
 

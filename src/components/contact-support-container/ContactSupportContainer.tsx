@@ -4,6 +4,13 @@ import Paragraph from '../paragraph/Paragraph'
 import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import { Button } from '../ui/button'
+import Header from '../header/Header'
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from '@/components/ui/accordion'
 
 const ContactSupportContainer = () => {
     return (
@@ -15,7 +22,7 @@ const ContactSupportContainer = () => {
                 marginTop="pt-8"
             />
             <div className="pt-12">
-                <section className="bg-white pt-8 min-h-screen pb-32 px-4 rounded-t-3xl">
+                <section className="bg-white pt-8 min-h-1/2 pb-32 px-4 rounded-t-3xl">
                     <h3 className="text-left font-bold">
                         How can we help you?
                     </h3>
@@ -36,6 +43,46 @@ const ContactSupportContainer = () => {
                             </Link>
                         </Button>
                     </div>
+                    <Header title="FAQs" classes="text-center pt-4 font-bold" />
+                    <small className="text-[0.65rem] text-center block">
+                        Frequently asked questions
+                    </small>
+                    <Header title="Top questions" classes="pt-4 font-bold" />
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger className="text-[0.8rem]">
+                                How long does certificate take to be ready?
+                            </AccordionTrigger>
+                            <AccordionContent className="">
+                                Lorem ipsum dolor sit amet consectetur. Id
+                                elementum amet fusce elit molestie dignissim. A
+                                in sociis at vulputate. A in sociis at
+                                vulputate.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className="text-[0.8rem]">
+                                Is it styled?
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                Lorem ipsum dolor sit amet consectetur. Id
+                                elementum amet fusce elit molestie dignissim. A
+                                in sociis at vulputate. A in sociis at
+                                vulputate.
+                            </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger className="text-[0.8rem]">
+                                How long does certificate take to be ready?
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                Lorem ipsum dolor sit amet consectetur. Id
+                                elementum amet fusce elit molestie dignissim. A
+                                in sociis at vulputate. A in sociis at
+                                vulputate.
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </section>
             </div>
         </section>
