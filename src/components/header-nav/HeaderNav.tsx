@@ -15,16 +15,26 @@ interface Props {
     title: string
     imageSrc: string
     marginTop?: string
+    space?: string
 }
 
-const HeaderNav: React.FC<Props> = ({ link, title, imageSrc, marginTop }) => {
+const HeaderNav: React.FC<Props> = ({
+    link,
+    title,
+    imageSrc,
+    marginTop,
+    space,
+}) => {
     const url = usePathname()
     return (
         <div
-            className={`flex gap-4 items-center justify-between w-full ${marginTop ? marginTop : '-mt-10'} mb-4 px-4`}
+            className={`flex gap-4 items-center justify-between w-full ${marginTop ? marginTop : '-mt-10'} mb-4 ${space ? space : 'px-4'}`}
         >
             <div className="flex items-center gap-6">
-                <Link className="w-6 cursor-pointer text-white" href={link}>
+                <Link
+                    className={`w-6 cursor-pointer ${url === '/dashboard' ? 'text-black' : 'text-white'}`}
+                    href={link}
+                >
                     <ArrowLeftIcon />
                 </Link>
                 <Header
@@ -38,7 +48,7 @@ const HeaderNav: React.FC<Props> = ({ link, title, imageSrc, marginTop }) => {
                 <div className="flex items-center gap-3">
                     <Link href={'/notifications'}>
                         <BellAlertIcon
-                            className={`${url === '/notifications' ? 'text-secondary' : 'text-white'} w-6 h-6 cursor-pointer`}
+                            className={`${url === '/notifications' || url === '/dashboard' ? 'text-secondary' : 'text-white'} w-6 h-6 cursor-pointer`}
                         />
                     </Link>
                     <div className="w-8 h-8 rounded-full border-2 border-secondary">

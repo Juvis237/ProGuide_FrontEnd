@@ -6,10 +6,19 @@ import RequestStatusBar from '../request-status-bar/RequestStatusBar'
 import RequestCard from '../request-card/RequestCard'
 import Support from '../support/Support'
 import { dashboardSummaryData } from '../../../data'
+import HeaderNav from '../header-nav/HeaderNav'
 
 const DashboardContainer = () => {
     return (
-        <div className={`px-4 ${dashboardSummaryData.length < 0 && 'pt-32'}`}>
+        <div
+            className={`px-4 ${dashboardSummaryData.length < 0 && 'pt-32'} pt-[4.5rem]`}
+        >
+            <HeaderNav
+                link="/dashboard"
+                title=""
+                imageSrc="/assets/avatar.png"
+                space="space"
+            />
             <div
                 className={`${dashboardSummaryData.length > 0 ? '' : 'img-bg-2 pt-8'}`}
             ></div>
