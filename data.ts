@@ -44,6 +44,16 @@ export const ResetPasswordField = [
         name: 'confirm_password',
     },
 ]
+export const updatePasswordField = [
+    {
+        name: `old_password`,
+        label: `Old Password`,
+    },
+    {
+        name: 'new_password',
+        label: 'New Password',
+    },
+]
 
 export const whyCardData = [
     {
@@ -249,12 +259,12 @@ export const profileData = [
     {
         icon: PencilIcon,
         label: 'Edit profile',
-        link: 'profile-edit'
+        link: '/profile-edit'
     },
     {
         icon: LockClosedIcon,
         label: 'Change password',
-        link: ''
+        link: '/update-password'
     },
     {
         icon: ArrowUpTrayIcon,
@@ -274,7 +284,7 @@ export const profileData = [
     {
         icon: QuestionMarkCircleIcon,
         label: 'Contact support',
-        link: 'contact-support'
+        link: '/contact-support'
     },
 ]
 
