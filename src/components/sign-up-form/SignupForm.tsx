@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
+import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import Header from '../header/Header'
@@ -21,10 +22,15 @@ import { signupSchema } from '@/types/signup.type'
 import { Button } from '../ui/button'
 import OptionIcon from '../option-icon/OptionIcon'
 import FormRedirect from '../form-redirect/FormRedirect'
+import { useRouter } from 'next/navigation'
+import { toast } from '../ui/use-toast'
+import ToastDescription from '../toast-description/ToastDescription'
 
 const SignupForm = () => {
+    const router = useRouter()
     const [showPassword, setShowPassword] = useState<boolean>(true)
     const [cShowPassword, setCShowPassword] = useState<boolean>(true)
+    const [disableBtn, setDisableBtn] = useState<boolean>(false)
 
     const togglerPassword = (fieldType: string) => {
         if (fieldType === 'password') {
@@ -41,20 +47,69 @@ const SignupForm = () => {
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof signupSchema>) {
-        console.log(values)
+    const onSubmit = async (values: z.infer<typeof signupSchema>) => {
+        setDisableBtn(true)
+        const requestBody = JSON.stringify({
+            email: values.email,
+            user_name: values.username,
+            phone: values.phone ? values.phone : null,
+            password: values.password,
+        })
+        try {
+            const request = await fetch(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/register`,
+                {
+                    method: 'POST',
+                    body: requestBody,
+                    headers: {
+                        'Content-type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                },
+            )
+            const response = await request.json()
+            const { header, status, message, data, type } = response
+
+            if (status) {
+                localStorage.setItem('user', JSON.stringify(data))
+                toast({
+                    variant: 'default',
+                    title: 'Login Successful',
+                    description: (
+                        <ToastDescription description={`${message}`} />
+                    ),
+                })
+                router.push('/dashboard')
+            } else {
+                toast({
+                    variant: 'destructive',
+                    title: 'Login Error',
+                    description: (
+                        <ToastDescription description={`${message}`} />
+                    ),
+                })
+                setDisableBtn(false)
+            }
+        } catch (error) {
+            toast({
+                variant: 'destructive',
+                title: 'Login Error',
+                description: <ToastDescription description={`${error}`} />,
+            })
+            setDisableBtn(false)
+        }
     }
     return (
-        <div className="img-bg flex flex-col items-center justify-center">
+        <div className="img-bg flex flex-col items-center justify-center pt-[9rem]">
             <Header
                 title={headerSignup}
-                classes="text-white font-bold text-3xl"
+                classes="text-white font-bold text-3xl mt-8"
             />
             <Paragraph
                 content={parSignup}
-                classes="text-white px-8 text-center "
+                classes="text-white px-8 text-center"
             />
-            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%]">
+            <div className="flex justify-center items-center flex-col mx-4 bg-white rounded-2xl px-4 py-6 box-shadow-2 w-[90%] border">
                 <div className="pb-6">
                     <Header
                         title="Sign Up"
@@ -64,7 +119,7 @@ const SignupForm = () => {
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-8 w-full px-4"
+                        className="space-y-8 w-full"
                     >
                         {signupField.map((fieldInput, index) => {
                             return (
@@ -74,6 +129,7 @@ const SignupForm = () => {
                                     name={
                                         fieldInput.name as
                                             | 'username'
+                                            | 'phone'
                                             | 'email'
                                             | 'password'
                                             | 'confirm_password'
@@ -146,6 +202,13 @@ const SignupForm = () => {
                             <Button
                                 type="submit"
                                 className="px-8 py-5 bg-secondary"
+                                disabled={
+                                    disableBtn || form.formState.isSubmitting
+                                }
+                                onClick={form.handleSubmit(onSubmit)}
+                                spinner={
+                                    disableBtn || form.formState.isSubmitting
+                                }
                             >
                                 Register
                             </Button>
@@ -153,7 +216,7 @@ const SignupForm = () => {
                     </form>
                 </Form>
                 <span>or</span>
-                <div className="flex justify-between gap-4 py-4">
+                <div className="flex justify-between gap-4 py-4 w-full">
                     {socialIcon.map((icon, index) => {
                         return <OptionIcon imageSrc={icon} key={index} />
                     })}

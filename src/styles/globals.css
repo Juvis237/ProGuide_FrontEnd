@@ -4,6 +4,8 @@
 
 @layer base {
     :root {
+        --font-roboto: 'Roboto', sans-serif;
+
         --background: 0 0% 100%;
         --foreground: 222.2 84% 4.9%;
 
@@ -24,6 +26,9 @@
 
         --accent: 148 94% 45%;
         --accent-foreground: 148 88% 93%;
+
+        --foundation: 0 0% 45%;
+
 
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
@@ -96,6 +101,12 @@
     .dashboard-summary-text {
         color: hsla(0, 0%, 11%, 1);
     }
+    .contact-us {
+        background: hsla(240, 10%, 72%, 1);
+    }
+    .contact-us-header{
+        background: hsla(216, 53%, 36%, 1);
+    }
     .img-bg-why-us {
         background-image: url('../../public/assets/Why choose us-bg@2x.png'),
             url('../../public/assets/Why choose us-bg@2x.png');
@@ -133,5 +144,25 @@
     }
     .box-shadow {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .x-y-flex {
+        @apply flex justify-center items-center;
+    }
+}
+
+@layer components {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    button,
+    a,
+    span,
+    div,
+    small {
+        font-family: var(--font-poppins);
     }
 }

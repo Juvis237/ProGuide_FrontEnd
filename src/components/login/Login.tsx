@@ -22,9 +22,14 @@ import { Button } from '../ui/button'
 import OptionIcon from '../option-icon/OptionIcon'
 import FormRedirect from '../form-redirect/FormRedirect'
 import Link from 'next/link'
+import ToastDescription from '../toast-description/ToastDescription'
+import { toast } from '../ui/use-toast'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+    const router = useRouter()
     const [showPassword, setShowPassword] = useState<boolean>(true)
+    const [disableBtn, setDisableBtn] = useState<boolean>(false)
 
     const togglerPassword = (fieldType: string) => {
         if (fieldType === 'password') {
@@ -36,8 +41,55 @@ const Login = () => {
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof loginSchema>) {
-        console.log(values)
+    const onSubmit = async (values: z.infer<typeof loginSchema>) => {
+        setDisableBtn(true)
+        const requestBody = JSON.stringify({
+            email: values.email,
+            password: values.password,
+        })
+        try {
+            const request = await fetch(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/login`,
+                {
+                    method: 'POST',
+                    body: requestBody,
+                    headers: {
+                        'Content-type': 'application/json',
+                        Accept: 'application/json',
+                    },
+                },
+            )
+            const response = await request.json()
+            const { message, user, token, success } = response
+
+            if (success) {
+                localStorage.setItem('user', JSON.stringify(user))
+                toast({
+                    variant: 'default',
+                    title: 'Login Successful',
+                    description: (
+                        <ToastDescription description={`${message}`} />
+                    ),
+                })
+                router.push('/dashboard')
+            } else {
+                toast({
+                    variant: 'destructive',
+                    title: 'Login Error',
+                    description: (
+                        <ToastDescription description={`${message}`} />
+                    ),
+                })
+                setDisableBtn(false)
+            }
+        } catch (error) {
+            toast({
+                variant: 'destructive',
+                title: 'Login Error',
+                description: <ToastDescription description={`${error}`} />,
+            })
+            setDisableBtn(false)
+        }
     }
     return (
         <div className="img-bg flex flex-col items-center justify-center">
@@ -59,7 +111,7 @@ const Login = () => {
                 <Form {...form}>
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-8 w-full px-4"
+                        className="space-y-8 w-full"
                     >
                         {loginField.map((fieldInput, index) => {
                             return (
@@ -136,6 +188,13 @@ const Login = () => {
                             <Button
                                 type="submit"
                                 className="px-8 py-5 bg-secondary"
+                                disabled={
+                                    disableBtn || form.formState.isSubmitting
+                                }
+                                onClick={form.handleSubmit(onSubmit)}
+                                spinner={
+                                    disableBtn || form.formState.isSubmitting
+                                }
                             >
                                 Login
                             </Button>
@@ -143,7 +202,7 @@ const Login = () => {
                     </form>
                 </Form>
                 <span>or</span>
-                <div className="flex justify-between gap-4 py-4">
+                <div className="flex justify-between gap-4 py-4 w-full">
                     {socialIcon.map((icon, index) => {
                         return <OptionIcon imageSrc={icon} key={index} />
                     })}

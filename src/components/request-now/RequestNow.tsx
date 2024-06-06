@@ -3,6 +3,7 @@ import Header from '../header/Header'
 import Paragraph from '../paragraph/Paragraph'
 import { Button } from '../ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const RequestNow = () => {
     return (
@@ -23,7 +24,9 @@ const RequestNow = () => {
                     content="Delve into a world od little or no stress and have unforgettable experience"
                     classes="text-center text-sm"
                 />
-                <Button className="text-white bg-secondary p-6">Request</Button>
+                <Button className="text-white bg-secondary p-6" asChild>
+                    <Link href={'/get-started'}>Get Started</Link>
+                </Button>
             </div>
         </div>
     )

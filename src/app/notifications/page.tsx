@@ -1,12 +1,11 @@
 import React from 'react'
 import AppLayout from '../AppLayout'
-import RequestContainer from '@/components/request-container/RequestContainer'
+import NotificationContainer from '@/components/notification-container/NotificationContainer'
 
 const page = () => {
     return (
         <AppLayout>
-            <RequestContainer />
-            {/* <div className="px-4"></div> */}
+            <NotificationContainer />
         </AppLayout>
     )
 }

@@ -1,9 +1,14 @@
 import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
+import { ArrowUpTrayIcon, CalendarIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 
 export const signupField = [
     {
         label: 'Username',
         name: 'username',
+    },
+    {
+        label: 'Tel',
+        name: 'phone',
     },
     {
         label: 'Email',
@@ -89,7 +94,7 @@ export const dashboardLink = [
     },
     {
         icon: faMagnifyingGlassChart,
-        link: '/profile',
+        link: '/tracking',
         name: 'Tracking'
     },
     {
@@ -149,11 +154,196 @@ export const dashboardSummaryData = [
     },
 ]
 
+export const step1Fields = [
+    {
+        name: `my_school`,
+        label: `What is your school?`,
+    },
+    {
+        name: `doc_type`,
+        label: `What type of document do you want?`,
+    },
+    {
+        name: `num_doc`,
+        label: `Number of documents requested`,
+    },
+    {
+        name: `trans_mode`,
+        label: `Transaction mode`,
+    },
+]
+
+export const step2Fields = [
+    {
+        name: `name`,
+        label: `Name`,
+    },
+    {
+        name: `matricule`,
+        label: `Matricule of applicant`,
+    },
+    {
+        name: `faculty`,
+        label: `Faculty`,
+    },
+    {
+        name: `department`,
+        label: `Department`,
+    },
+    {
+        name: `level`,
+        label: `Level`,
+    },
+]
+
+export const step3Fields = [
+    {
+        name: `payment_mode`,
+        label: `How would you like to pay`,
+    },
+    {
+        name: `phone`,
+        label: `Phone number`,
+    }
+]
+
+export const steps = [
+    {
+        id: 'Step 1',
+        name: 'Document information',
+        description: 'Let’s begin your application process. Please fill in the  form below',
+        fields: ['my_school', 'doc_type', 'num_doc', 'trans_mode'],
+        label: [`What is your school?`,
+            `What type of document do you want?`,
+            `Number of documents requested`,
+            `Transaction mode`,
+        ],
+    },
+    {
+        id: 'Step 2',
+        name: 'Applicant Information',
+        description: 'Please enter the relevant applicant information',
+        fields: ['name', 'matricule', 'faculty', 'department', 'level'],
+        label: ['Name', 'Matricule of applicant', 'Faculty', 'Department', 'Level'],
+    },
+    {
+        id: 'Step 3',
+        name: 'Make Payments',
+        description: 'You can now pay for your desired document to complete the process',
+        fields: ['payment_mode', 'phone'],
+        label: ['How would you like to pay', 'Phone number',],
+    },
+]
+
+export const summaryLabel = [{ label: 'Name of applicant', name: 'name' },
+{ label: 'Matricule of applicant', name: 'matricule' },
+{ label: 'School', name: 'my_school' },
+{ label: 'Faculty', name: 'faculty' },
+{ label: 'Department', name: 'department' },
+{ label: 'Level', name: 'level' },
+{ label: 'Document type', name: 'doc_type' },
+{ label: 'Number of document requested', name: 'num_doc' },
+{ label: 'Transaction mode', name: 'trans_mode' }]
+
+export const profileData = [
+    {
+        icon: PencilIcon,
+        label: 'Edit profile',
+        link: 'profile-edit'
+    },
+    {
+        icon: LockClosedIcon,
+        label: 'Change password',
+        link: ''
+    },
+    {
+        icon: ArrowUpTrayIcon,
+        label: 'Logout',
+        link: ''
+    },
+    {
+        icon: Cog6ToothIcon,
+        label: 'Settings',
+        link: 'settings'
+    },
+    {
+        icon: ExclamationCircleIcon,
+        label: 'About Pro-Guide',
+        link: ''
+    },
+    {
+        icon: QuestionMarkCircleIcon,
+        label: 'Contact support',
+        link: 'contact-support'
+    },
+]
+
+export const editProfileField = [
+    {
+        label: 'Username',
+        name: 'username',
+    },
+    {
+        label: 'Email',
+        name: 'email',
+    },
+    {
+        label: 'Contact',
+        name: 'phone',
+    },
+]
+export const contactUs = [
+    {
+        label: 'Username',
+        name: 'username',
+    },
+    {
+        label: 'Email',
+        name: 'email',
+    },
+    {
+        label: 'Message title',
+        name: 'message_title',
+    },
+    {
+        label: '',
+        name: 'message',
+    },
+]
+
+export const notificationData = [
+    {
+        title: 'Transcript now available',
+        description: 'Your transcript is now ready from the admin. Check My Docs to download',
+        time: '2 days ago',
+        icon: CalendarIcon
+    },
+    {
+        title: 'Payment completed',
+        description: 'Payment for your English proficiency has just been received. A sum of XAF4,500 has been deducted from your mobile money account',
+        time: '6 days ago',
+        icon: CalendarIcon
+    },
+    {
+        title: 'Application pending',
+        description: 'Your application has been successfully submitted. it will soon be assigned an agent',
+        time: '20th May 2024',
+        icon: CalendarIcon
+    },
+    {
+        title: 'Your document has been rejected',
+        description: 'Document with ID number #123456 has been rejected possibly because the matricule didn’t match the applicant name',
+        time: '20th May 2024',
+        icon: CalendarIcon
+    },
+]
+
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'
 export const parFogotPassword = 'Let’s  help your recover your ProGuide account'
 
+<<<<<<< HEAD
 export const socialIcon = ['/assets/google-logo.png', '/assets/facebook-lite-logo.png', '/assets/x-logo.png']
 
 export const myDocumentData = [
@@ -182,3 +372,6 @@ export const myDocumentData = [
         link: 'https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf',
     }
 ];
+=======
+export const socialIcon = ['/assets/google-logo.png']
+>>>>>>> e91cc0194db5416e6393a73b7c91b3b2039c1b9b
