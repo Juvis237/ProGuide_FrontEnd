@@ -8,7 +8,7 @@ interface Props {
 
 const Header: React.FC<Props> = ({ title, classes }) => {
     return (
-        <div className={`font-bold mt-4 text-xl text-muted w-full flex justify-between px-4 py-2`}>
+        <div className={`${classes ? classes : ''} font-bold mt-4 text-xl text-black w-full flex justify-between px-4 py-2`}>
             <div className="flex items-center space-x-4">
                 <ArrowLeftIcon className="w-6 h-6" />
                 <h1 className="text-lg font-semibold">{title}</h1>

@@ -1,4 +1,4 @@
-import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
+import { faClipboardList, faCodePullRequest, faFile, faFileUpload, faFolder, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
 import { ArrowUpTrayIcon, CalendarIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 
 export const signupField = [
@@ -84,7 +84,7 @@ export const howWeWorkData = [
 export const dashboardLink = [
     {
         icon: faHouse,
-        link: '/dashboard',
+        link: '/agent',
         name: 'Dashboard'
     },
     {
@@ -102,6 +102,29 @@ export const dashboardLink = [
         link: '/my-docs',
         name: 'My Docs'
     },
+]
+
+export const agentLink = [
+    {
+        icon: faHouse,
+        link: '/dashboard',
+        name: 'Dashboard'
+    },
+    {
+        icon: faFileUpload,
+        link: '/upload',
+        name: 'Upload'
+    },
+    {
+        icon: faClipboardList,
+        link: '/progress',
+        name: 'Progress'
+    },
+    {
+        icon: faFolder,
+        link: '/documents',
+        name: 'Documents'
+    }
 ]
 
 export const requestStatus = [
@@ -343,7 +366,6 @@ export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'
 export const parFogotPassword = 'Let’s  help your recover your ProGuide account'
 
-<<<<<<< HEAD
 export const socialIcon = ['/assets/google-logo.png', '/assets/facebook-lite-logo.png', '/assets/x-logo.png']
 
 export const myDocumentData = [
@@ -372,6 +394,4 @@ export const myDocumentData = [
         link: 'https://www.learningcontainer.com/wp-content/uploads/2019/09/sample-pdf-file.pdf',
     }
 ];
-=======
-export const socialIcon = ['/assets/google-logo.png']
->>>>>>> e91cc0194db5416e6393a73b7c91b3b2039c1b9b
+
