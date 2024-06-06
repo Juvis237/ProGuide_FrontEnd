@@ -5,8 +5,6 @@ import SearchBar from '../search-bar/SearchBar'
 import DocumentCard from '../document-card/DocumentCard'
 import { myDocumentData } from '../../../data'
 import { ChevronLeftIcon } from '@radix-ui/react-icons'
-//import FilePreview from '../file-preview/FilePreview'
-
 
 export interface DocumentProps {
     name: string
@@ -28,10 +26,10 @@ const MyDocuments: React.FC = () => {
                 classes="font-bold mt-4 text-xl text-muted"
             />
             <div
-                className="relative min-w-[400px] w-90% h-[731px] top-[94px] left-[1px] gap-[0px] rounded-tl-[30px] rounded-tr-[30px] rounded-bl-[0px] rounded-br-[0px] bg-white p-4"
+                className="relative min-w-[400px] w-90% top-[94px] left-[1px] gap-[0px] rounded-tl-[30px] rounded-tr-[30px] rounded-bl-[0px] rounded-br-[0px] bg-white p-4"
             >
                 {selectedDocument ? (
-                    <div className="w-full bg-[#C7DBF9] h-full border rounded-t-[30px] shadow-md overflow-hidden flex flex-col items-center">
+                    <div className="w-full bg-[#C7DBF9] h-[630px] mb-[150px] h-full border rounded-t-[30px] shadow-md overflow-hidden flex flex-col items-center">
                         <div className="p-4">
                             <button
                                 className="mb-4 flex"
@@ -50,12 +48,12 @@ const MyDocuments: React.FC = () => {
                     </div>
                 ) : (
                     <div
-                        className='w-full min-w-[366px] h-[491.16px]'
+                        className='w-full min-w-[366px]'
                     >
                         {myDocumentData.length > 0 ? (
                             <>
                                 <SearchBar />
-                                <div className="flex flex-col gap-4 mt-4">
+                                <div className="flex flex-col gap-4 mt-5 mb-[150px]">
                                     {myDocumentData.map((document) => (
                                         <DocumentCard
                                             key={document.id}

@@ -11,15 +11,15 @@ interface Props {
 const DocumentCard: React.FC<Props> = ({ document, onPreview }) => {
 
     return (
-        <div className="flex flex-col gap-4 p-4 rounded-lg shadow-lg">
+        <div className="flex flex-col gap-4 p-4 rounded-lg shadow-lg" onClick={onPreview}>
             <div className="flex items-center gap-4">
                 <div>
                     <FileTextIcon color='red' className='w-10 h-10' />
                 </div>
-                <div>
-                    <h3 className="font-bold">{document.name}</h3>
-                    <p className="text-sm">Date received: <span className='text-[#ffac1c]'>{new Date(document.dateReceived).toDateString()}</span></p>
-                    <TrashIcon color='red' className='w-8 h-5' />
+                <div className='text-left'>
+                    <h3 className="font-bold pl-2">{document.name}</h3>
+                    <p className="text-sm pl-2">Date received: <span className='text-[#ffac1c]'>{new Date(document.dateReceived).toDateString()}</span></p>
+                    <h3 className=""><TrashIcon color='red' className='w-8 h-5'/></h3>
                 </div>
                 <a className="ml-auto cursor-pointer" onClick={onPreview}>
                     <ChevronRightIcon />
