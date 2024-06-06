@@ -62,7 +62,7 @@ const UploadDocuments: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center min-h-screen">
+        <div className="flex flex-col">
             <HeaderExtend title="Upload">
                 <div className="w-full flex flex-col items-center mt-10 mb-6">
                     <div className="p-4 mb-4">

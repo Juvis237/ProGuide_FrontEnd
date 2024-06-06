@@ -107,7 +107,7 @@ export const dashboardLink = [
 export const agentLink = [
     {
         icon: faHouse,
-        link: '/dashboard',
+        link: '/agent',
         name: 'Dashboard'
     },
     {
