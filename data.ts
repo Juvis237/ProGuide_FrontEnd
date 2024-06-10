@@ -1,5 +1,5 @@
-import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons"
-import { ArrowUpTrayIcon, CalendarIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import { faCodePullRequest, faFile, faHouse, faMagnifyingGlassChart, faUpload } from "@fortawesome/free-solid-svg-icons"
+import { ArrowUpTrayIcon, CalendarIcon, Cog6ToothIcon, ExclamationCircleIcon, LockClosedIcon, PencilIcon, QuestionMarkCircleIcon, StarIcon, WalletIcon } from '@heroicons/react/24/outline'
 
 export const signupField = [
     {
@@ -106,6 +106,28 @@ export const dashboardLink = [
         icon: faMagnifyingGlassChart,
         link: '/tracking',
         name: 'Tracking'
+    },
+    {
+        icon: faFile,
+        link: '/my-docs',
+        name: 'My Docs'
+    },
+]
+export const dashboardLink2 = [
+    {
+        icon: faHouse,
+        link: '/dashboard',
+        name: 'Dashboard'
+    },
+    {
+        icon: faCodePullRequest,
+        link: '/progress',
+        name: 'Progess'
+    },
+    {
+        icon: faUpload,
+        link: '/upload',
+        name: 'Upload'
     },
     {
         icon: faFile,
@@ -287,6 +309,50 @@ export const profileData = [
         link: '/contact-support'
     },
 ]
+export const profileDataAgent = [
+    {
+        icon: PencilIcon,
+        label: 'Edit profile',
+        link: '/profile-edit'
+    },
+    {
+        icon: LockClosedIcon,
+        label: 'Change password',
+        link: '/update-password'
+    },
+    {
+        icon: WalletIcon,
+        label: 'Withdraw History',
+        link: '/withdraw-history'
+
+    },
+    {
+        icon: StarIcon,
+        label: 'Reviews',
+        link: '/review'
+
+    },
+    {
+        icon: ArrowUpTrayIcon,
+        label: 'Logout',
+        link: ''
+    },
+    {
+        icon: Cog6ToothIcon,
+        label: 'Settings',
+        link: 'settings'
+    },
+    {
+        icon: ExclamationCircleIcon,
+        label: 'About Pro-Guide',
+        link: ''
+    },
+    {
+        icon: QuestionMarkCircleIcon,
+        label: 'Contact support',
+        link: '/contact-support'
+    },
+]
 
 export const editProfileField = [
     {
@@ -346,6 +412,30 @@ export const notificationData = [
         time: '20th May 2024',
         icon: CalendarIcon
     },
+]
+
+export const comments = [
+    {
+    imgSrc: '/assets/avatar.png',
+    name: 'Kathy M',
+    comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
+    commentDate: '22-05-24, 3:30pm',
+    stars: 3
+},
+    {
+    imgSrc: '/assets/avatar.png',
+    name: 'Kathy M',
+    comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
+    commentDate: '22-05-24, 3:30pm',
+    stars: 3
+},
+    {
+    imgSrc: '/assets/avatar.png',
+    name: 'Kathy M',
+    comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
+    commentDate: '22-05-24, 3:30pm',
+    stars: 3
+},
 ]
 
 export const headerSignup = 'Pro-Delivery'

@@ -15,10 +15,11 @@ interface Props {
 
 const ProfileTab: React.FC<Props> = ({ label, Icon, link }) => {
     return (
-        <Link href={link}
+        <Link
+            href={link}
             className={`cursor-pointer flex justify-between items-center border-b py-3 ${label === 'Logout' && 'text-red-600'}`}
         >
-            <div className="flex gap-5">
+            <div className={`flex gap-5 `}>
                 <Icon
                     className={`w-5 h-5 ${label === 'Logout' && '-rotate-90'}`}
                 />

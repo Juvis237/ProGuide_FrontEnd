@@ -3,6 +3,8 @@ import HeaderNav from '../header-nav/HeaderNav'
 import SearchBar from '../search-bar/SearchBar'
 import RequestStatusBar from '../request-status-bar/RequestStatusBar'
 import Support from '../support/Support'
+import Timeline from '../time-line/Timeline'
+import ProfileContainerAgent from '../profile-container-agent/ProfileContainerAgent'
 
 const TrackingContainer = () => {
     return (
@@ -17,6 +19,7 @@ const TrackingContainer = () => {
                 <section className="bg-white pt-8 min-h-screen pb-32 px-4 rounded-t-3xl">
                     <SearchBar />
                     <RequestStatusBar />
+                    <ProfileContainerAgent />
                 </section>
             </div>
             <Support />
