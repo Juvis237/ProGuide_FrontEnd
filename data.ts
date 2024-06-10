@@ -301,7 +301,7 @@ export const profileData = [
     {
         icon: ExclamationCircleIcon,
         label: 'About Pro-Guide',
-        link: ''
+        link: '/about'
     },
     {
         icon: QuestionMarkCircleIcon,
@@ -345,7 +345,7 @@ export const profileDataAgent = [
     {
         icon: ExclamationCircleIcon,
         label: 'About Pro-Guide',
-        link: ''
+        link: '/about'
     },
     {
         icon: QuestionMarkCircleIcon,
@@ -416,26 +416,45 @@ export const notificationData = [
 
 export const comments = [
     {
-    imgSrc: '/assets/avatar.png',
-    name: 'Kathy M',
-    comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
-    commentDate: '22-05-24, 3:30pm',
-    stars: 3
-},
+        imgSrc: '/assets/avatar.png',
+        name: 'Kathy M',
+        comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
+        commentDate: '22-05-24, 3:30pm',
+        stars: 3
+    },
     {
-    imgSrc: '/assets/avatar.png',
-    name: 'Kathy M',
-    comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
-    commentDate: '22-05-24, 3:30pm',
-    stars: 3
-},
+        imgSrc: '/assets/avatar.png',
+        name: 'Kathy M',
+        comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
+        commentDate: '22-05-24, 3:30pm',
+        stars: 3
+    },
     {
-    imgSrc: '/assets/avatar.png',
-    name: 'Kathy M',
-    comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
-    commentDate: '22-05-24, 3:30pm',
-    stars: 3
-},
+        imgSrc: '/assets/avatar.png',
+        name: 'Kathy M',
+        comment: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis ',
+        commentDate: '22-05-24, 3:30pm',
+        stars: 3
+    },
+]
+
+export const about = [
+    {
+        title: 'Pro-Guide',
+        description: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis .amet fusce elit molestie dignissim. A in sociis at vulputate. A in tout sociis. sit amet consectetur. Id elementum amet et fusce elit molestie dignissim'
+    },
+    {
+        title: 'Mission',
+        description: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis .amet fusce elit molestie dignissim. A in sociis at vulputate. A in tout sociis. sit amet consectetur. '
+    },
+    {
+        title: 'Vision',
+        description: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis .amet fusce elit molestie dignissim. A in sociis at vulputate. A in tout sociis. sit amet consectetur. '
+    },
+    {
+        title: 'Core Values',
+        description: 'Lorem ipsum dolor sit amet consectetur. Id elementum amet fusce elit molestie dignissim. A in sociis at vulputate. A in sociis .amet fusce elit molestie dignissim. A in sociis at vulputate. A in tout sociis. sit amet consectetur. '
+    },
 ]
 
 export const headerSignup = 'Pro-Delivery'
