@@ -1,9 +1,7 @@
 import React from 'react'
 
 const PageLayout = () => {
-  return (
-    <div></div>
-  )
+    return <div></div>
 }
 
 export default PageLayout
