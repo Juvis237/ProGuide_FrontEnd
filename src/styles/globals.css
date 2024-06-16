@@ -139,6 +139,13 @@
         object-fit: cover;
         height: 200px;
     }
+    .request-bg-now {
+        background-image: url('/assets/onboarding-CTA-bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+        height: 200px;
+    }
     .box-shadow-2 {
         box-shadow: 0px 4px 8px -2px hsla(220, 43%, 11%, 0.25);
     }

@@ -20,6 +20,7 @@ import FormStep3 from '../form-step-3/FormStep3'
 import { Form } from '../ui/form'
 import { Button } from '../ui/button'
 import HeaderNav from '../header-nav/HeaderNav'
+import Image from 'next/image'
 
 const RequestContainer = () => {
     type FieldName = keyof z.infer<typeof documentRequestSchema>
@@ -128,9 +129,27 @@ const RequestContainer = () => {
                                 classes="hero text-primary font-bold text-xl"
                             />
                             <Paragraph
-                                content="Let’s begin your application process. Please fill in the form below"
+                                content={steps[currentStep].description}
                                 classes="text-sm"
                             />
+                            {currentStep === 2 && (
+                                <div className="dashboard-summary rounded-2xl my-8 flex justify-center items-center min-h-[180px] flex-col relative">
+                                    <Header
+                                        title="Total Amount"
+                                        classes="text-xl text-center"
+                                    />
+                                    <Paragraph
+                                        content="XAF 4,000"
+                                        classes="text-center text-2xl font-bold"
+                                    />
+                                    <small className="text-[0.75rem]">
+                                        <span className="text-white">
+                                            charges incured:
+                                        </span>{' '}
+                                        XAF100
+                                    </small>
+                                </div>
+                            )}
                         </>
                     ) : (
                         <Paragraph

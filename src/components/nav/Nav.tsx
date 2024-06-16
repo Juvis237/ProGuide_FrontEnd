@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Nav = () => {
     return (
-        <div className="p-4">
+        <div className="p-4 md:p-8">
             <nav className="flex justify-between items-center py-5 bg-primary px-4 rounded-2xl">
                 <h1 className="text-white text-2xl">Pro-Delivery</h1>
                 <Button

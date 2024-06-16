@@ -457,6 +457,26 @@ export const about = [
     },
 ]
 
+export const agent = [{
+    name: 'firstName',
+    label: 'First name',
+}, {
+    name: 'lastName',
+    label: "Last name"
+}, {
+    name: 'nic',
+    label: "National Identification Card number(NIC)"
+},
+{
+    name: 'handle_doc',
+    label: "What official documents can you handle?"
+},
+{
+    name: 'price',
+    label: "How much is your pricing for a service? "
+}
+]
+
 export const headerSignup = 'Pro-Delivery'
 export const parSignup = 'Begin  an incredible  journey of success with us'
 export const parLogin = 'Welcome back! Let’s pick up from where you ended'
