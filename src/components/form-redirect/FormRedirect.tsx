@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 interface Props {
-    link?: string
+    link: string
     linkTextDescription: string
     linkText: string
 }

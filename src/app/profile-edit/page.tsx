@@ -2,9 +2,7 @@ import ProfileEditContainer from '@/components/profile-edit-container/ProfileEdi
 import React from 'react'
 
 const page = () => {
-    return (
-            <ProfileEditContainer />
-    )
+    return <ProfileEditContainer />
 }
 
 export default page

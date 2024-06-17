@@ -7,7 +7,7 @@ const WhyChooseUs2 = () => {
             <section className="relative px-4">
                 <div className="mb-4">
                     <Image
-                        src={'/assets/journey with us-img@2x.png'}
+                        src={'/assets/journey with us-img.svg'}
                         height={1000}
                         width={1000}
                         alt="journey with us bg"

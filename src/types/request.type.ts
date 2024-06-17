@@ -6,7 +6,7 @@ export const documentRequestSchema = z.object({
         required_error: 'Please select a document type',
     }),
     num_doc: z.coerce.number({
-        required_error: 'Enter number of document'
+        required_error: 'Enter number of document',
     }),
     trans_mode: z.string({
         required_error: 'Please select a transcript mode',
@@ -18,21 +18,21 @@ export const documentRequestSchema = z.object({
         })
         .refine((value) => !/\d/.test(value), 'Name cannot contain digits'),
     matricule: z.string({
-        required_error: 'Enter your Matriculation number'
+        required_error: 'Enter your Matriculation number',
     }),
     faculty: z.string({
-        required_error: 'Please select your faculty'
+        required_error: 'Please select your faculty',
     }),
     department: z.string({
-        required_error: 'Please select your department'
+        required_error: 'Please select your department',
     }),
     level: z.string({
-        required_error: 'Please select your Level'
+        required_error: 'Please select your Level',
     }),
     payment_mode: z.string({
-        required_error: 'Please select a payment method'
+        required_error: 'Please select a payment method',
     }),
-    phone: z.
-        coerce.number()
+    phone: z.coerce
+        .number()
         .min(9, 'Contact must be at least 9 characters long'),
 })

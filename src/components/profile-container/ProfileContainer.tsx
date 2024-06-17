@@ -10,7 +10,11 @@ import HeaderNav from '../header-nav/HeaderNav'
 const ProfileContainer = () => {
     return (
         <div className="img-bg flex flex-col items-center justify-center">
-            <HeaderNav title="Account" link="/dashboard" imageSrc="/assets/avatar.png" />
+            <HeaderNav
+                title="Account"
+                link="/dashboard"
+                imageSrc="/assets/avatar.png"
+            />
             <div className="flex justify-center items-center gap-1 my-3 flex-col text-white">
                 <div className="w-24 h-24 border-2 border-white rounded-full relative">
                     <Image
@@ -29,7 +33,12 @@ const ProfileContainer = () => {
             </div>
             <div className="flex flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-6 py-6 box-shadow-2 w-[90%] mb-9">
                 {profileData.map((el, index) => (
-                    <ProfileTab key={index} label={el.label} Icon={el.icon} link={el.link}/>
+                    <ProfileTab
+                        key={index}
+                        label={el.label}
+                        Icon={el.icon}
+                        link={el.link}
+                    />
                 ))}
             </div>
         </div>

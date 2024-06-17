@@ -5,9 +5,7 @@ interface Props {
 }
 
 const Paragraph: React.FC<Props> = ({ content, classes }) => {
-    return (
-        <p className={`py-3 font-2xl ${classes}`}>{content}</p>
-    )
+    return <p className={`py-3 font-2xl ${classes}`}>{content}</p>
 }
 
 export default Paragraph

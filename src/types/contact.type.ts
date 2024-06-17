@@ -6,10 +6,10 @@ export const contactSchema = z.object({
     message: z
         .string()
         .min(10, {
-            message: "message must be at least 10 characters.",
+            message: 'message must be at least 10 characters.',
         })
         .max(160, {
-            message: "message must not be longer than 30 characters.",
+            message: 'message must not be longer than 30 characters.',
         }),
     message_title: z.string(),
 })
