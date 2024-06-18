@@ -10,7 +10,7 @@ const ReviewContainer = () => {
             <HeaderNav
                 title="Reviews"
                 link="/"
-                imageSrc="/assets/avatar.png"
+                imageSrc="/assets/avatar.svg"
                 marginTop="pt-8"
             />
             <div className="pt-12">
