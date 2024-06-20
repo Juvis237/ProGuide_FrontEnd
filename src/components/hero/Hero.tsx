@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="flex flex-col justify-center md:justify-between items-center w-full mt-6 p-4 md:p-8 md:flex-row">
             <div className="w-[50%]">
                 <Image
-                    src={'/assets/welcome-img.svg'}
+                    src={'/assets/Welcome-img.svg'}
                     width={1000}
                     height={1000}
                     alt="hero image"
