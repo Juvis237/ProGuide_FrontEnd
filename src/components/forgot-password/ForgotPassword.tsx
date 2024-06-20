@@ -32,7 +32,7 @@ const ForgotPassword = () => {
         console.log(values)
     }
     return (
-        <div className="img-bg flex flex-col items-center justify-center">
+        <div className="img-bg sm:bg-primary flex flex-col items-center justify-center">
             <Header
                 title={headerSignup}
                 classes="text-white font-bold text-3xl"
@@ -41,7 +41,7 @@ const ForgotPassword = () => {
                 content={parFogotPassword}
                 classes="text-white px-8 text-center "
             />
-            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%]">
+            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%] sm:max-w-[380px]">
                 <div className="pb-6">
                     <Header
                         title="Forgot Password"

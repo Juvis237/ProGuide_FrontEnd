@@ -54,6 +54,8 @@ const SignupForm = () => {
             user_name: values.username,
             phone: values.phone ? values.phone : null,
             password: values.password,
+            referal_code: '',
+            role: localStorage.getItem('role') === 'agent' ? 'agent' : 'normal',
         })
         try {
             const request = await fetch(
@@ -73,12 +75,12 @@ const SignupForm = () => {
             if (status) {
                 localStorage.setItem('user', JSON.stringify(data))
                 toast({
-                    variant: 'default',
                     title: 'Login Successful',
                     description: (
                         <ToastDescription description={`${message}`} />
                     ),
                 })
+
                 router.push('/dashboard')
             } else {
                 toast({
@@ -100,7 +102,7 @@ const SignupForm = () => {
         }
     }
     return (
-        <div className="img-bg flex flex-col items-center justify-center pt-[9rem]">
+        <div className="img-bg sm:bg-primary h-full flex flex-col items-center justify-center pt-[9rem]">
             <Header
                 title={headerSignup}
                 classes="text-white font-bold text-3xl mt-8"
@@ -109,7 +111,7 @@ const SignupForm = () => {
                 content={parSignup}
                 classes="text-white px-8 text-center"
             />
-            <div className="flex justify-center items-center flex-col mx-4 bg-white rounded-2xl px-4 py-6 box-shadow-2 w-[90%] border">
+            <div className="flex justify-center items-center flex-col mx-4 bg-white rounded-2xl px-4 py-6 box-shadow-2 w-[90%] sm:max-w-[400px] mb-8">
                 <div className="pb-6">
                     <Header
                         title="Sign Up"
@@ -131,6 +133,7 @@ const SignupForm = () => {
                                             | 'username'
                                             | 'phone'
                                             | 'email'
+                                            | 'referal_code'
                                             | 'password'
                                             | 'confirm_password'
                                     }

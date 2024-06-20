@@ -31,6 +31,10 @@ export const signupField = [
         name: 'email',
     },
     {
+        label: 'Referal Code',
+        name: 'referal_code',
+    },
+    {
         name: `password`,
         label: `Password`,
     },

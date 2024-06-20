@@ -32,6 +32,7 @@ const GetStartedContainer = () => {
     // 2. Define a submit handler.
     const onSubmit = async (values: z.infer<typeof userType>) => {
         console.log(values)
+        localStorage.setItem('role', values.user_type)
         router.push('/sign-up')
     }
     return (

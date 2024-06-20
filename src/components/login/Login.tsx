@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
 import { useForm } from 'react-hook-form'
@@ -25,12 +25,21 @@ import Link from 'next/link'
 import ToastDescription from '../toast-description/ToastDescription'
 import { toast } from '../ui/use-toast'
 import { useRouter } from 'next/navigation'
+import { useAppDispatch } from '@/lib/hook'
+import { setUser } from '@/lib/feature/user.slice'
 
 const Login = () => {
     const router = useRouter()
     const [showPassword, setShowPassword] = useState<boolean>(true)
     const [disableBtn, setDisableBtn] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
 
+    useLayoutEffect(() => {
+        const user = localStorage.getItem('user')
+        if (user) {
+            router.push('/dashboard')
+        }
+    }, [router])
     const togglerPassword = (fieldType: string) => {
         if (fieldType === 'password') {
             setShowPassword(!showPassword)
@@ -64,6 +73,7 @@ const Login = () => {
 
             if (success) {
                 localStorage.setItem('user', JSON.stringify(user))
+                dispatch(setUser(user))
                 toast({
                     variant: 'default',
                     title: 'Login Successful',
@@ -92,7 +102,7 @@ const Login = () => {
         }
     }
     return (
-        <div className="img-bg flex flex-col items-center justify-center">
+        <div className="img-bg sm:bg-primary flex flex-col items-center justify-center">
             <Header
                 title={headerSignup}
                 classes="text-white font-bold text-3xl"
@@ -101,7 +111,7 @@ const Login = () => {
                 content={parLogin}
                 classes="text-white px-8 text-center "
             />
-            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%]">
+            <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%] sm:max-w-[380px]">
                 <div className="pb-6">
                     <Header
                         title="Login"

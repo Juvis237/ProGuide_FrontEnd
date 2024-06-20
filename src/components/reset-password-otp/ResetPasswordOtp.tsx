@@ -67,7 +67,7 @@ const ResetPasswordOtp = () => {
 
     return (
         <div>
-            <div className="img-bg flex flex-col items-center justify-center">
+            <div className="img-bg sm:bg-primary flex flex-col items-center justify-center">
                 <div className="flex gap-4 items-center w-full pl-4 -mt-24 mb-24">
                     <Link
                         className="w-6 cursor-pointer text-white"
@@ -81,7 +81,7 @@ const ResetPasswordOtp = () => {
                     />
                 </div>
                 {/* -mt-24 mb-24 */}
-                <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%]">
+                <div className="flex justify-center items-center flex-col mx-4 bg-white min-h-[400px] rounded-2xl px-4 py-6 box-shadow-2 w-[90%] sm:max-w-[380px]">
                     <div className="pb-3 flex flex-col items-center">
                         <Header
                             title="Email sent"

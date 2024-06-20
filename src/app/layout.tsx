@@ -3,6 +3,7 @@ import { poppins } from './font'
 
 import '../styles/globals.css'
 import { Toaster } from '@/components/ui/toaster'
+import StoreProvider from './StoreProvider'
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="!scroll-smooth">
-            <body className={poppins.className}>{children}</body>
+            <body className={poppins.className}>
+            <StoreProvider>{children}</StoreProvider>
+            </body>
             <Toaster />
         </html>
     )
