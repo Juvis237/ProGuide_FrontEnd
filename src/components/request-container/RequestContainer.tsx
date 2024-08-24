@@ -92,10 +92,7 @@ const RequestContainer = () => {
                 `${userData.first_name} ${userData.last_name}` || '',
             )
             form.setValue('faculty', userData.faculty || '')
-            form.setValue(
-                'faculty',
-                userData.phone ? userData.phone.toString() : '',
-            )
+            form.setValue('faculty', userData.faculty ? userData.faculty : '')
 
             const requiredFields = ['name'] as const
 
@@ -445,7 +442,8 @@ const RequestContainer = () => {
                                     <small className="text-[0.75rem]">
                                         <span className="text-white">
                                             charges incured:
-                                        </span>{'0'}
+                                        </span>
+                                        {'0'}
                                         XAF100
                                     </small>
                                 </div>
@@ -560,9 +558,7 @@ const RequestContainer = () => {
                                     />
                                 </div>
                                 <Button
-                                    onClick={() =>
-                                        router.push('/dashboard')
-                                    }
+                                    onClick={() => router.push('/dashboard')}
                                 >
                                     Retry
                                 </Button>
