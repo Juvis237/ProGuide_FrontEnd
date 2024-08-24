@@ -1,0 +1,14 @@
+# Ignore artifacts:
+build
+coverage
+dist
+.next
+next-env.d.ts
+node_modules
+yarn.lock
+bun.lockb
+package-lock.json
+public
+commitlint.config.js
+# Ignore all HTML files:
+**/*.html
