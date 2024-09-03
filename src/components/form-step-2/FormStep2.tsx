@@ -7,13 +7,7 @@ import {
     FormMessage,
 } from '../ui/form'
 import { Input } from '../ui/input'
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from '../ui/select'
+import { Switch } from '../ui/switch'
 
 const FormStep2 = ({
     step2Fields,
@@ -36,9 +30,15 @@ const FormStep2 = ({
                                 | 'faculty'
                                 | 'department'
                                 | 'number'
+                                | 'scan_copy'
                         }
                         render={({ field }) => (
-                            <FormItem>
+                            <FormItem
+                                className={`${
+                                    field.name === 'scan_copy' &&
+                                    'flex items-center gap-2'
+                                }`}
+                            >
                                 <FormLabel
                                     className={`cursor-pointer font-normal`}
                                     htmlFor={fieldInput.name}
@@ -51,12 +51,25 @@ const FormStep2 = ({
                                         key={index}
                                         className="border-primary bg-white"
                                     >
-                                        <Input
-                                            {...field}
-                                            id={fieldInput.name}
-                                            name={fieldInput.name}
-                                            className="py-6"
-                                        />
+                                        {fieldInput.name === 'scan_copy' ? (
+                                            <FormControl>
+                                                <Switch
+                                                    checked={!!field.value}
+                                                    onCheckedChange={
+                                                        field.onChange
+                                                    }
+                                                    id={fieldInput.name}
+                                                    style={{ marginTop: 0 }}
+                                                />
+                                            </FormControl>
+                                        ) : (
+                                            <Input
+                                                {...field}
+                                                id={fieldInput.name}
+                                                name={fieldInput.name}
+                                                className="py-6"
+                                            />
+                                        )}
                                     </div>
                                 </>
 

@@ -142,10 +142,8 @@ const ProfileEditContainer = () => {
                         src={
                             userData ? userData?.profile : '/assets/avatar.svg'
                         }
+                        className="rounded-full w-full h-full"
                     />
-                    <div className="absolute top-0 right-0 rounded-full h-7 w-7 flex justify-center items-center bg-white cursor-pointer">
-                        <CameraIcon className={`"w-5 h-5 text-black`} />
-                    </div>
                 </div>
                 <p>
                     {userData?.first_name} {userData?.last_name}

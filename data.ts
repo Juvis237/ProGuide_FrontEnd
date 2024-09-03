@@ -272,6 +272,10 @@ export const step2Fields = [
         name: `level`,
         label: `Level`,
     },
+    {
+        name: `scan_copy`,
+        label: `Do you want a scan copy?`,
+    },
 ]
 
 export const step3Fields = [
@@ -346,6 +350,7 @@ export const summaryLabel = [
     { label: 'Document type', name: 'doc_type' },
     { label: 'Number of document requested', name: 'num_doc' },
     { label: 'Transaction mode', name: 'trans_mode' },
+    { label: 'Do you want a scan copy', name: 'scan_copy' },
     { label: 'Total', name: 'total' },
 ]
 
@@ -520,6 +525,10 @@ export const contactUs = [
     {
         label: 'Username',
         name: 'username',
+    },
+    {
+        label: 'Tel',
+        name: 'phone',
     },
     {
         label: 'Email',

@@ -10,6 +10,7 @@ export const schoolSchema = z.array(
                 name: z.string().optional(),
                 price: z.string().optional(),
                 duration: z.string(),
+                scan_copy: z.string(),
                 modes: z.array(
                     z.object({
                         id: z.coerce.number(),

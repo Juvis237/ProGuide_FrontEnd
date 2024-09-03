@@ -63,12 +63,15 @@ const HeaderNav: React.FC<Props> = ({
                             />
                         </Link>
                         <div
-                            className="absolute bg-secondary -top-2 -right-2 w-5 h-5 flex justify-center items-center rounded-full text-white text-sm"
+                            className="absolute cursor-pointer bg-secondary -top-2 -right-2 w-5 h-5 flex justify-center items-center rounded-full text-white text-sm"
                             onClick={() => router.push('/notifications')}
                         >
                             {notificationCount && notificationCount > 9 ? (
                                 <span>
+                                    <span className='text-sm'>
+
                                     {9}
+                                    </span>
                                     <sup>+</sup>
                                 </span>
                             ) : (

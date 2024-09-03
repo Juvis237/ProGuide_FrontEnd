@@ -91,7 +91,6 @@ const RequestContainer = () => {
                 'name',
                 `${userData.first_name} ${userData.last_name}` || '',
             )
-            form.setValue('faculty', userData.faculty || '')
             form.setValue('faculty', userData.faculty ? userData.faculty : '')
 
             const requiredFields = ['name'] as const
@@ -146,7 +145,9 @@ const RequestContainer = () => {
             const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pay`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    amount: 5,
+                    amount: values.scan_copy
+                        ? totalPrice + Number(selectedDeliverable?.scan_copy)
+                        : totalPrice,
                     currency: 'XAF',
                     from: values.phone,
                     request_id:
@@ -329,9 +330,13 @@ const RequestContainer = () => {
                                     ? selectedDeliverable?.name
                                     : item.name === 'trans_mode'
                                       ? selectedMode?.name
-                                      : values[
-                                            item.name as keyof typeof values
-                                        ]}
+                                      : item.name === 'scan_copy'
+                                        ? selectedDeliverable?.scan_copy
+                                            ? 'Yes'
+                                            : 'No'
+                                        : values[
+                                              item.name as keyof typeof values
+                                          ]}
                         </p>
                     </div>
                 ))}

@@ -4,6 +4,7 @@ export const documentRequestSchema = z.object({
     my_school: z.coerce.number(),
     for_me: z.boolean().optional(),
     payment_method: z.string().optional(),
+    scan_copy: z.boolean().optional(),
     doc_type: z.string({
         required_error: 'Please select a document type',
     }),
