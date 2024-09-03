@@ -73,7 +73,7 @@ const ContactUsForm = () => {
                 }
                 toast({
                     variant: 'default',
-                    title: 'Profile Updated Successfully',
+                    title: 'Request Successfully submitted',
                     description: (
                         <ToastDescription description={`${message}`} />
                     ),
@@ -82,7 +82,7 @@ const ContactUsForm = () => {
             } else {
                 toast({
                     variant: 'destructive',
-                    title: 'Profile Update Error',
+                    title: 'Error submitting request',
                     description: (
                         <ToastDescription description={`${message}`} />
                     ),
@@ -92,7 +92,7 @@ const ContactUsForm = () => {
         } catch (error) {
             toast({
                 variant: 'destructive',
-                title: 'Profile Update Error',
+                title: 'Error submitting request',
                 description: <ToastDescription description={`${error}`} />,
             })
             setDisableBtn(false)
