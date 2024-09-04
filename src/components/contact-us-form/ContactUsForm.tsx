@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button'
 import {
     Form,
@@ -18,14 +18,16 @@ import Paragraph from '../paragraph/Paragraph'
 import { contactSchema } from '@/types/contact.type'
 import { contactUs } from '../../../data'
 import { Textarea } from '../ui/textarea'
-import { useAppSelector } from '@/lib/hook'
+import { useAppDispatch, useAppSelector } from '@/lib/hook'
 import ToastDescription from '../toast-description/ToastDescription'
 import { toast } from '../ui/use-toast'
 import { useRouter } from 'next/navigation'
+import { setUser } from '@/lib/feature/user.slice'
 
 const ContactUsForm = () => {
     const userData = useAppSelector((state) => state.user.user)
     const router = useRouter()
+    const dispatch = useAppDispatch()
     const [disableBtn, setDisableBtn] = useState<boolean>(false)
 
     const token =
@@ -34,7 +36,9 @@ const ContactUsForm = () => {
     const form = useForm<z.infer<typeof contactSchema>>({
         resolver: zodResolver(contactSchema),
         defaultValues: {
-            username: token ? `${userData?.first_name} ${userData?.last_name}` : '',
+            username: token
+                ? `${userData?.first_name} ${userData?.last_name}`
+                : '',
             phone: token ? userData?.phone : undefined,
             email: token ? userData?.email : '',
         },
@@ -44,7 +48,7 @@ const ContactUsForm = () => {
     const onSubmit = async (values: z.infer<typeof contactSchema>) => {
         setDisableBtn(true)
         const requestBody = JSON.stringify({
-            name: values.username,
+            user_name: values.username,
             phone: values.phone,
             email: values.email,
             content: values.content,

@@ -536,11 +536,11 @@ export const contactUs = [
     },
     {
         label: 'Message title',
-        name: 'message_title',
+        name: 'subject',
     },
     {
         label: '',
-        name: 'message',
+        name: 'content',
     },
 ]
 

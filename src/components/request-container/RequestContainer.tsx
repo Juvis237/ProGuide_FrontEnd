@@ -441,16 +441,17 @@ const RequestContainer = () => {
                                         classes="text-xl text-center"
                                     />
                                     <Paragraph
-                                        content={`XAF ${totalPrice}`}
+                                        content={`XAF ${form.getValues('scan_copy') === true ? totalPrice + Number(selectedDeliverable?.scan_copy) : totalPrice}`}
                                         classes="text-center text-2xl font-bold"
                                     />
-                                    <small className="text-[0.75rem]">
+                                    {/* <small className="text-[0.75rem] text-white">
                                         <span className="text-white">
-                                            charges incured:
+                                            charges incurred:
                                         </span>
-                                        {'0'}
-                                        XAF100
-                                    </small>
+                                        {form.getValues('scan_copy') === true
+                                            ? ` ${Number(selectedDeliverable?.scan_copy)} XAF`
+                                            : `0 XAF`}
+                                    </small> */}
                                 </div>
                             )}
 
