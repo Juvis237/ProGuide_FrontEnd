@@ -323,7 +323,7 @@ const RequestContainer = () => {
                         <p className="text-sm italic">{item.label}</p>
                         <p className="font-normal">
                             {item.label === 'Total'
-                                ? totalPrice
+                                ? `XAF ${totalPrice + Number(selectedDeliverable?.scan_copy)}`
                                 : item.name === 'my_school'
                                   ? selectedSchool?.name
                                   : item.name === 'doc_type'
@@ -331,9 +331,9 @@ const RequestContainer = () => {
                                     : item.name === 'trans_mode'
                                       ? selectedMode?.name
                                       : item.name === 'scan_copy'
-                                        ? selectedDeliverable?.scan_copy
-                                            ? 'Yes'
-                                            : 'No'
+                                        ? form.getValues('scan_copy') === true
+                                            ? `XAF ${Number(selectedDeliverable?.scan_copy)}`
+                                            : 'XAF 0'
                                         : values[
                                               item.name as keyof typeof values
                                           ]}
@@ -566,7 +566,7 @@ const RequestContainer = () => {
                                 <Button
                                     onClick={() => router.push('/dashboard')}
                                 >
-                                    Retry
+                                    Go to dashboard
                                 </Button>
                             </section>
                         </div>
