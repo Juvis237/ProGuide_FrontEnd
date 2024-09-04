@@ -1,0 +1,26 @@
+import { z } from 'zod'
+
+export const userSchema = z.object({
+    address: z.string().optional(),
+    bio: z.string().optional(),
+    city: z.string().optional(),
+    city_id: z.number().optional(),
+    company: z.string().optional(),
+    email: z.string().email(),
+    email_verified_at: z.date().optional(),
+    first_name: z.string().optional(),
+    id: z.number(),
+    last_name: z.string().optional(),
+    phone: z.coerce.number().optional(),
+    profile: z.string(),
+    region: z.string().optional(),
+    region_id: z.number().optional(),
+    referal_code: z.string(),
+    role: z.string().optional(),
+    website: z.string().optional(),
+    school: z.string().optional(),
+    matricule: z.string().optional(),
+    department: z.string().optional(),
+    level: z.string().optional(),
+    faculty: z.string().optional(),
+})
