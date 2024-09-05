@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { documentRequestSchema } from '@/types/request.type'
 import { useAppDispatch, useAppSelector } from '@/lib/hook'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { setSchool } from '@/lib/feature/school.slice'
 import Header from '../header/Header'
 import Paragraph from '../paragraph/Paragraph'
@@ -29,9 +29,11 @@ import { setCreateDocument } from '@/lib/feature/create-document.slice'
 import { setFormData } from '@/lib/feature/form-data.slice'
 import { createDocumentRequestSchema } from '@/types/document-request-type'
 import Image from 'next/image'
+import { toast } from '../ui/use-toast'
 
 const RequestContainer = () => {
     const dispatch = useAppDispatch()
+    const pathname = usePathname()
     const router = useRouter()
     const userData = useAppSelector((state) => state.user.user)
     const schools = useAppSelector((state) => state.school.school)
@@ -111,10 +113,22 @@ const RequestContainer = () => {
             })
 
             if (missingFields) {
+                toast({
+                    variant: 'destructive',
+                    title: 'Incomplete Profile',
+                    description:
+                        'Your profile is incomplete. Please update it.',
+                })
+
+                const previousUrl = pathname
+                // Save previous URL to sessionStorage to use it after profile update
+                sessionStorage.setItem('previousUrl', previousUrl)
+
                 router.push('/profile-edit')
             }
         }
     }, [forMe, userData, form, router])
+
 
     const values = form.getValues()
 

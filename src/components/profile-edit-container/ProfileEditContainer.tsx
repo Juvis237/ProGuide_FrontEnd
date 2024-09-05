@@ -3,7 +3,6 @@
 import React, { useLayoutEffect, useState } from 'react'
 import HeaderNav from '../header-nav/HeaderNav'
 import Image from 'next/image'
-import { CameraIcon } from '@heroicons/react/24/outline'
 import { Button } from '../ui/button'
 import { editProfileField } from '../../../data'
 import {
@@ -94,7 +93,20 @@ const ProfileEditContainer = () => {
                         <ToastDescription description={`${message}`} />
                     ),
                 })
-                router.push('/dashboard')
+
+                // Check if there's a previous URL stored and redirect to it
+                const previousUrl = sessionStorage.getItem('previousUrl')
+                if (previousUrl && previousUrl === '/request-now') {
+                    router.push(previousUrl) // Redirect back to the previous page
+                    toast({
+                        variant: 'default',
+                        title: 'Redirecting to Document request page',
+                        description: <ToastDescription description={``} />,
+                    })
+                    sessionStorage.removeItem('previousUrl')
+                } else {
+                    router.push('/dashboard') // Default redirect to the dashboard
+                }
             } else {
                 toast({
                     variant: 'destructive',
