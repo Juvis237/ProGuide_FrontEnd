@@ -48,8 +48,9 @@ const RequestContainer = () => {
     const [loading, setLoading] = useState(false)
     const [proceed, setProceed] = useState(true)
     const [paymentInitiated, setPaymentInitiated] = useState(false)
+    const [paymentSuccess, setPaymentSuccess] = useState(false)
     const [paymentFailed, setPaymentFailed] = useState(false)
-    const [counter, setCounter] = useState(180) // Initial counter value
+    const [counter, setCounter] = useState(60) // Initial counter value
     const token =
         typeof localStorage !== 'undefined' &&
         localStorage.getItem('user-token')
@@ -129,7 +130,6 @@ const RequestContainer = () => {
         }
     }, [forMe, userData, form, router])
 
-
     const values = form.getValues()
 
     const selectedSchool =
@@ -159,7 +159,9 @@ const RequestContainer = () => {
             const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pay`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    amount: 5,
+                    amount: values.scan_copy
+                        ? totalPrice + Number(selectedDeliverable?.scan_copy)
+                        : totalPrice,
                     currency: 'XAF',
                     from: values.phone,
                     request_id:
@@ -194,6 +196,7 @@ const RequestContainer = () => {
 
         if (!output) return
 
+        const formData = form.getValues()
         if (currentStep === 1 && proceed) {
             setProceed(false)
             return
@@ -201,7 +204,6 @@ const RequestContainer = () => {
 
         if (currentStep === 1) {
             setLoading(true)
-            const formData = form.getValues()
             const documentResponse = await createDocumentRequest(formData)
 
             if (documentResponse) {
@@ -274,12 +276,14 @@ const RequestContainer = () => {
             )
             const res = await req.json()
 
-            if (req.ok && res.status === 'success') {
+            if (res.success) {
                 // Payment successful
-                router.push('/payment-complete')
+                setPaymentSuccess(true) // Set payment success to true
+                setPaymentInitiated(false) // Stop payment initiation process
+                router.push('/payment-complete') // Redirect user to payment-complete
             } else {
                 // Payment still pending
-                setTimeout(() => checkPaymentStatus(reference), 5000) // Retry after 5 seconds
+                setTimeout(() => checkPaymentStatus(reference), 20000) // Retry after 20 seconds
             }
         } catch (error) {
             console.error('Error checking payment status:', error)
@@ -288,17 +292,15 @@ const RequestContainer = () => {
 
     useEffect(() => {
         if (paymentInitiated) {
-            // Decrease the counter every second
             const counterInterval = setInterval(() => {
                 setCounter((prevCounter) => prevCounter - 1)
             }, 1000)
 
-            // Timeout to handle payment failure after 1 minute
             const paymentTimeout = setTimeout(() => {
                 setPaymentFailed(true)
                 setPaymentInitiated(false)
                 clearInterval(counterInterval) // Clear the interval if payment fails
-            }, 180000) // 3 minute
+            }, 60000) // 1 minute
 
             return () => {
                 clearTimeout(paymentTimeout)
@@ -379,7 +381,7 @@ const RequestContainer = () => {
                     }),
                 )
                 router.push('/payment-complete')
-            }, 30000) // 30 seconds in milliseconds
+            }, 0) // 30 seconds in milliseconds
 
             return () => clearTimeout(timeout) // Clear the timeout on component unmount
         }, [])
@@ -574,7 +576,7 @@ const RequestContainer = () => {
                         </>
                     )}
 
-                    {paymentInitiated && <PaymentUI />}
+                    {paymentSuccess && <PaymentUI />}
 
                     {paymentFailed && (
                         <div className="success_modal animate cursor-pointer flex justify-center items-center">
@@ -584,7 +586,9 @@ const RequestContainer = () => {
                                 </h2>
                                 <div className="text-center">
                                     <Paragraph
-                                        content={`The payment did not complete within the expected time. Please try again`}
+                                        content={`It seems your payment took longer than expected to complete. 
+    If the payment was successful, you will still receive a confirmation soon. 
+    Otherwise, please try again.`}
                                     />
                                 </div>
                                 <Button
