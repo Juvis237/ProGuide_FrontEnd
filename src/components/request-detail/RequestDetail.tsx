@@ -165,27 +165,34 @@ const RequestDetail = () => {
                                                     {el.label} :
                                                 </p>
                                                 <p className="font-normal">
-                                                    {el.label === 'Amount' ? (
+                                                    {el.name === 'total' ? (
                                                         `XAF ${totalPrice}`
                                                     ) : el.label ===
                                                       'Request ID' ? (
                                                         `${requestId}`
-                                                    ) : el.label === 'Level' ? (
+                                                    ) : el.name === 'level' ? (
                                                         `${request.user_data?.level}`
-                                                    ) : el.label ===
-                                                      'Department' ? (
+                                                    ) : el.name ===
+                                                      'department' ? (
                                                         `${request.user_data?.department}`
-                                                    ) : el.label ===
-                                                      'Name of applicant' ? (
+                                                    ) : el.name === 'name' ? (
                                                         `${request.user_data?.name}`
-                                                    ) : el.label ===
-                                                      'Matricule of applicant' ? (
+                                                    ) : el.name ===
+                                                      'matricule' ? (
                                                         `${request.user_data?.matricule}`
-                                                    ) : el.label ===
-                                                      'Faculty' ? (
+                                                    ) : el.name ===
+                                                      'faculty' ? (
                                                         `${request.user?.faculty}`
-                                                    ) : el.label ===
-                                                      'Number of document requested' ? (
+                                                    ) : el.name ===
+                                                      'scan_copy' ? (
+                                                        request?.scan_copy ===
+                                                        '0' ? (
+                                                            'No'
+                                                        ) : (
+                                                            `Yes`
+                                                        )
+                                                    ) : el.name ===
+                                                      'num_doc' ? (
                                                         `${request.user_data?.num_doc}`
                                                     ) : el.label ===
                                                       'Payment mode' ? (
@@ -210,7 +217,14 @@ const RequestDetail = () => {
                                                         selectedDeliverable?.name
                                                     ) : el.name ===
                                                       'trans_mode' ? (
-                                                        selectedMode?.name
+                                                        selectedMode?.name ? (
+                                                            selectedMode.name.slice(
+                                                                0,
+                                                                9,
+                                                            )
+                                                        ) : (
+                                                            ''
+                                                        )
                                                     ) : (
                                                         formattedValue.toString()
                                                     )}

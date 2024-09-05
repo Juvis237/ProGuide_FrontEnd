@@ -29,7 +29,7 @@ const ForgotPassword = () => {
 
     // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof forgotPasswordSchema>) {
-        console.log(values)
+       
     }
     return (
         <div className="img-bg sm:bg-primary flex flex-col items-center justify-center">

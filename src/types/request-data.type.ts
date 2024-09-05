@@ -6,6 +6,7 @@ export const documentRequestDataSchema = z.array(
         id: z.number(),
         duration: z.string(),
         status: z.string(),
+        scan_copy: z.string(),
         number: z.number().optional().nullable(),
         available_status: z.array(z.string()),
         user: z.object({
@@ -30,6 +31,7 @@ export const documentRequestDataSchema = z.array(
             name: z.string().optional(),
             price: z.string().optional(),
             duration: z.string(),
+            scan_copy: z.string(),
             delivrables: z.array(
                 z.object({
                     id: z.coerce.number().optional(),

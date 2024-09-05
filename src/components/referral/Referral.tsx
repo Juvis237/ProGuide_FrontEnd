@@ -58,7 +58,6 @@ const Referral = () => {
     const handleSubmit: SubmitHandler<z.infer<typeof withdrawSchema>> = async (
         values,
     ) => {
-        console.log(values)
     }
     const fetchReferralData = async () => {
         const req = await fetch(

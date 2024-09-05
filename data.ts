@@ -341,16 +341,16 @@ export const steps = [
 ]
 
 export const summaryLabel = [
-    { label: 'Name of applicant', name: 'name' },
-    { label: 'Matricule of applicant', name: 'matricule' },
+    { label: 'Name of student', name: 'name' },
+    { label: 'Matricule number', name: 'matricule' },
     { label: 'School', name: 'my_school' },
     { label: 'Faculty', name: 'faculty' },
     { label: 'Department', name: 'department' },
     { label: 'Level', name: 'level' },
     { label: 'Document type', name: 'doc_type' },
-    { label: 'Number of document requested', name: 'num_doc' },
+    { label: 'No of doc requested', name: 'num_doc' },
     { label: 'Transaction mode', name: 'trans_mode' },
-    { label: 'Do you want a scan copy', name: 'scan_copy' },
+    { label: 'Scan copy of doc', name: 'scan_copy' },
     { label: 'Total', name: 'total' },
 ]
 
@@ -359,17 +359,17 @@ export const summaryLabelComplete = [
         id: 'Step 1',
         name: 'Request info',
         data: [
-            { label: 'Name of applicant', name: 'name' },
-            { label: 'Matricule of applicant', name: 'matricule' },
+            { label: 'Name of student', name: 'name' },
+            { label: 'Matricule number', name: 'matricule' },
             { label: 'School', name: 'my_school' },
             { label: 'Faculty', name: 'faculty' },
             { label: 'Department', name: 'department' },
             { label: 'Level', name: 'level' },
             { label: 'Document type', name: 'doc_type' },
-            { label: 'Number of document requested', name: 'num_doc' },
-            { label: 'Transcript mode', name: 'trans_mode' },
-            { label: 'Request date', name: 'date' },
-            { label: 'Request ID', name: 'request_id' },
+            { label: 'No of doc requested', name: 'num_doc' },
+            { label: 'Transaction mode', name: 'trans_mode' },
+            { label: 'Scan copy of doc', name: 'scan_copy' },
+            { label: 'Total', name: 'total' },
         ],
     },
     {

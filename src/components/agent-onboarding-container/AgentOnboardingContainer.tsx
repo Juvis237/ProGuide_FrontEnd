@@ -27,9 +27,7 @@ const AgentOnboardingContainer = () => {
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof agentOnboardingSchema>) {
-        console.log(values)
-    }
+    function onSubmit(values: z.infer<typeof agentOnboardingSchema>) {}
 
     return (
         <section className="w-full min-h-screen mb-8">

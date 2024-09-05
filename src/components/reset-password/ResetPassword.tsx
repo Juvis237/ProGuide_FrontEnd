@@ -57,7 +57,7 @@ const ResetPassword = () => {
 
     // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof resetPasswordSchema>) {
-        console.log(values)
+
     }
     return (
         <div className="img-bg sm:bg-primary h-full flex flex-col items-center justify-center">

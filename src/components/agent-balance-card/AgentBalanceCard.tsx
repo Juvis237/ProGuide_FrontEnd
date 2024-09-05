@@ -9,7 +9,6 @@ const AgentBalanceCard = () => {
     const visibleLocalPartLength = Math.min(0, localPart.length) // Keeping at least 3 characters of the local part visible
     const hiddenPart = '*'.repeat(localPart.length - visibleLocalPartLength)
 
-    console.log(hiddenPart)
 
     const [showPassword, setShowPassword] = useState<boolean>(true)
     // {

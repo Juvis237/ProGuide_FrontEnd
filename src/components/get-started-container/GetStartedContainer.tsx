@@ -31,7 +31,6 @@ const GetStartedContainer = () => {
 
     // 2. Define a submit handler.
     const onSubmit = async (values: z.infer<typeof userType>) => {
-        console.log(values)
         if (typeof localStorage !== 'undefined') {
             localStorage.setItem('role', values.user_type)
         }

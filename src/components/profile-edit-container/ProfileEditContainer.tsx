@@ -54,7 +54,6 @@ const ProfileEditContainer = () => {
 
     const onSubmit = async (values: z.infer<typeof editSchema>) => {
         setDisableBtn(true)
-        console.log(values)
 
         const requestBody = JSON.stringify({
             first_name: values.first_name,

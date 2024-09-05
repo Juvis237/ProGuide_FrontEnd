@@ -49,7 +49,6 @@ const UpdatePasswordForm = () => {
 
     // 2. Define a submit handler.
     const onSubmit = async (values: z.infer<typeof resetPasswordSchema>) => {
-        console.log(values)
         setDisableBtn(true)
         const requestBody = JSON.stringify({
             oldPassword: values.old_password,

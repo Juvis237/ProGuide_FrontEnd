@@ -47,7 +47,7 @@ const RequestContainer = () => {
     const [proceed, setProceed] = useState(true)
     const [paymentInitiated, setPaymentInitiated] = useState(false)
     const [paymentFailed, setPaymentFailed] = useState(false)
-    const [counter, setCounter] = useState(60) // Initial counter value
+    const [counter, setCounter] = useState(180) // Initial counter value
     const token =
         typeof localStorage !== 'undefined' &&
         localStorage.getItem('user-token')
@@ -145,9 +145,7 @@ const RequestContainer = () => {
             const req = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/pay`, {
                 method: 'POST',
                 body: JSON.stringify({
-                    amount: values.scan_copy
-                        ? totalPrice + Number(selectedDeliverable?.scan_copy)
-                        : totalPrice,
+                    amount: 5,
                     currency: 'XAF',
                     from: values.phone,
                     request_id:
@@ -267,7 +265,7 @@ const RequestContainer = () => {
                 router.push('/payment-complete')
             } else {
                 // Payment still pending
-                setTimeout(() => checkPaymentStatus(reference), 20000) // Retry after 20 seconds
+                setTimeout(() => checkPaymentStatus(reference), 5000) // Retry after 5 seconds
             }
         } catch (error) {
             console.error('Error checking payment status:', error)
@@ -286,7 +284,7 @@ const RequestContainer = () => {
                 setPaymentFailed(true)
                 setPaymentInitiated(false)
                 clearInterval(counterInterval) // Clear the interval if payment fails
-            }, 60000) // 1 minute
+            }, 180000) // 3 minute
 
             return () => {
                 clearTimeout(paymentTimeout)
@@ -316,28 +314,37 @@ const RequestContainer = () => {
         return (
             <div className="summary">
                 {summaryLabel.map((item, index) => (
-                    <div
-                        className="flex items-center justify-between"
-                        key={index}
-                    >
-                        <p className="text-sm italic">{item.label}</p>
-                        <p className="font-normal">
-                            {item.label === 'Total'
-                                ? `XAF ${totalPrice + Number(selectedDeliverable?.scan_copy)}`
-                                : item.name === 'my_school'
-                                  ? selectedSchool?.name
-                                  : item.name === 'doc_type'
-                                    ? selectedDeliverable?.name
-                                    : item.name === 'trans_mode'
-                                      ? selectedMode?.name
-                                      : item.name === 'scan_copy'
-                                        ? form.getValues('scan_copy') === true
-                                            ? `XAF ${Number(selectedDeliverable?.scan_copy)}`
-                                            : 'XAF 0'
-                                        : values[
-                                              item.name as keyof typeof values
-                                          ]}
-                        </p>
+                    <div className="flex items-center" key={index}>
+                        <div className="w-1/2 flex justify-end">
+                            <p className="text-sm">{item.label}:</p>
+                        </div>
+                        <div className="w-1/2 flex justify-start">
+                            <p className="font-normal text-sm">
+                                {item.label === 'Total'
+                                    ? form.getValues('scan_copy') === true
+                                        ? `XAF ${totalPrice + Number(selectedDeliverable?.scan_copy)}`
+                                        : `XAF ${totalPrice}`
+                                    : item.name === 'my_school'
+                                      ? selectedSchool?.name
+                                      : item.name === 'doc_type'
+                                        ? selectedDeliverable?.name
+                                        : item.name === 'trans_mode'
+                                          ? selectedMode?.name
+                                              ? selectedMode.name.slice(0, 9)
+                                              : ''
+                                          : item.name === 'scan_copy'
+                                            ? form.getValues('scan_copy') ===
+                                              true
+                                                ? `Yes`
+                                                : 'XAF 0'
+                                            : values[
+                                                  item.name.slice(
+                                                      0,
+                                                      15,
+                                                  ) as keyof typeof values
+                                              ]}
+                            </p>
+                        </div>
                     </div>
                 ))}
             </div>
