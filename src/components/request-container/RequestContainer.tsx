@@ -368,23 +368,23 @@ const RequestContainer = () => {
     }
 
     const PaymentUI = () => {
-        useEffect(() => {
-            const timeout = setTimeout(() => {
-                dispatch(
-                    setFormData({
-                        ...values,
-                        request_id: (createDocument as DocumentType)?.id,
-                        amount: totalPrice,
-                        payment_mode: (operator as OperatorType)?.operator,
-                        date: (createDocument as DocumentType)?.date,
-                        charges: `XAF 0`,
-                    }),
-                )
-                router.push('/payment-complete')
-            }, 0) // 30 seconds in milliseconds
+        // useEffect(() => {
+        //     const timeout = setTimeout(() => {
+        //         dispatch(
+        //             setFormData({
+        //                 ...values,
+        //                 request_id: (createDocument as DocumentType)?.id,
+        //                 amount: totalPrice,
+        //                 payment_mode: (operator as OperatorType)?.operator,
+        //                 date: (createDocument as DocumentType)?.date,
+        //                 charges: `XAF 0`,
+        //             }),
+        //         )
+        //         router.push('/payment-complete')
+        //     }, 6000) // 30 seconds in milliseconds
 
-            return () => clearTimeout(timeout) // Clear the timeout on component unmount
-        }, [])
+        //     return () => clearTimeout(timeout) // Clear the timeout on component unmount
+        // }, [])
         return (
             <div className="text-center flex justify-center gap-4 items-center flex-col">
                 <h2 className="text-lg font-bold">
@@ -576,7 +576,7 @@ const RequestContainer = () => {
                         </>
                     )}
 
-                    {paymentSuccess && <PaymentUI />}
+                    {paymentInitiated && <PaymentUI />}
 
                     {paymentFailed && (
                         <div className="success_modal animate cursor-pointer flex justify-center items-center">
@@ -584,11 +584,11 @@ const RequestContainer = () => {
                                 <h2 className="text-xl font-bold">
                                     Payment Failed
                                 </h2>
-                                <div className="text-center">
+                                <div className="text-center text-sm px-4">
                                     <Paragraph
-                                        content={`It seems your payment took longer than expected to complete. 
-    If the payment was successful, you will still receive a confirmation soon. 
-    Otherwise, please try again.`}
+                                        content={
+                                            'It seems your payment took longer than expected to complete. If the payment was successful, you will still receive a confirmation soon. Otherwise, please try again.'
+                                        }
                                     />
                                 </div>
                                 <Button
