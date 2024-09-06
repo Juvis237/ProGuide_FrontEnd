@@ -368,8 +368,8 @@ export const summaryLabelComplete = [
             { label: 'Document type', name: 'doc_type' },
             { label: 'No of doc requested', name: 'num_doc' },
             { label: 'Transaction mode', name: 'trans_mode' },
+            { label: 'Request date', name: 'date' },
             { label: 'Scan copy of doc', name: 'scan_copy' },
-            { label: 'Total', name: 'total' },
         ],
     },
     {
@@ -377,7 +377,7 @@ export const summaryLabelComplete = [
         name: 'Payment Details',
         data: [
             { label: 'Payment mode', name: 'payment_mode' },
-            { label: 'Amount', name: 'amount' },
+            { label: 'Amount', name: 'total' },
             { label: 'Phone Number', name: 'phone' },
         ],
     },
