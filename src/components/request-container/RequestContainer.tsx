@@ -330,37 +330,41 @@ const RequestContainer = () => {
         return (
             <div className="summary">
                 {summaryLabel.map((item, index) => (
-                    <div className="flex items-center" key={index}>
-                        <div className="w-1/2 flex justify-end">
-                            <p className="text-sm">{item.label}:</p>
-                        </div>
-                        <div className="w-1/2 flex justify-start">
-                            <p className="font-normal text-sm">
-                                {item.label === 'Total'
-                                    ? form.getValues('scan_copy') === true
-                                        ? `XAF ${totalPrice + Number(selectedDeliverable?.scan_copy)}`
-                                        : `XAF ${totalPrice}`
-                                    : item.name === 'my_school'
-                                      ? selectedSchool?.name
-                                      : item.name === 'doc_type'
-                                        ? selectedDeliverable?.name
-                                        : item.name === 'trans_mode'
-                                          ? selectedMode?.name
-                                              ? selectedMode.name.slice(0, 9)
-                                              : ''
-                                          : item.name === 'scan_copy'
-                                            ? form.getValues('scan_copy') ===
-                                              true
-                                                ? `Yes`
-                                                : 'XAF 0'
-                                            : values[
-                                                  item.name.slice(
-                                                      0,
-                                                      15,
-                                                  ) as keyof typeof values
-                                              ]}
-                            </p>
-                        </div>
+                    <div
+                        className="flex items-center justify-between"
+                        key={index}
+                    >
+                        {/* <div className="w-1/2 flex justify-end"> */}
+                        <p className="text-sm italic font-bold">
+                            {item.label}:
+                        </p>
+                        {/* </div> */}
+                        {/* <div className="w-1/2 flex justify-start"> */}
+                        <p className="font-normal text-sm">
+                            {item.label === 'Total'
+                                ? form.getValues('scan_copy') === true
+                                    ? `XAF ${totalPrice + Number(selectedDeliverable?.scan_copy)}`
+                                    : `XAF ${totalPrice}`
+                                : item.name === 'my_school'
+                                  ? selectedSchool?.name
+                                  : item.name === 'doc_type'
+                                    ? selectedDeliverable?.name
+                                    : item.name === 'trans_mode'
+                                      ? selectedMode?.name
+                                          ? selectedMode.name.slice(0, 9)
+                                          : ''
+                                      : item.name === 'scan_copy'
+                                        ? form.getValues('scan_copy') === true
+                                            ? `Yes`
+                                            : 'No'
+                                        : values[
+                                              item.name.slice(
+                                                  0,
+                                                  15,
+                                              ) as keyof typeof values
+                                          ]}
+                        </p>
+                        {/* </div> */}
                     </div>
                 ))}
             </div>
@@ -368,23 +372,27 @@ const RequestContainer = () => {
     }
 
     const PaymentUI = () => {
-        // useEffect(() => {
-        //     const timeout = setTimeout(() => {
-        //         dispatch(
-        //             setFormData({
-        //                 ...values,
-        //                 request_id: (createDocument as DocumentType)?.id,
-        //                 amount: totalPrice,
-        //                 payment_mode: (operator as OperatorType)?.operator,
-        //                 date: (createDocument as DocumentType)?.date,
-        //                 charges: `XAF 0`,
-        //             }),
-        //         )
-        //         router.push('/payment-complete')
-        //     }, 6000) // 30 seconds in milliseconds
+        useEffect(() => {
+            const timeout = setTimeout(() => {
+                dispatch(
+                    setFormData({
+                        ...values,
+                        request_id: (createDocument as DocumentType)?.id,
+                        amount:
+                            form.getValues('scan_copy') === true
+                                ? totalPrice +
+                                  Number(selectedDeliverable?.scan_copy)
+                                : totalPrice,
+                        payment_mode: (operator as OperatorType)?.operator,
+                        date: (createDocument as DocumentType)?.date,
+                        charges: `XAF 0`,
+                    }),
+                )
+                router.push('/payment-complete')
+            }, 30000) // 30 seconds in milliseconds
 
-        //     return () => clearTimeout(timeout) // Clear the timeout on component unmount
-        // }, [])
+            return () => clearTimeout(timeout) // Clear the timeout on component unmount
+        }, [])
         return (
             <div className="text-center flex justify-center gap-4 items-center flex-col">
                 <h2 className="text-lg font-bold">

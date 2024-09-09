@@ -7,9 +7,11 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 type FormData = {
+    num_doc: number
     my_school: number
     doc_type: string
     trans_mode: string
+    scan_copy: boolean
     // Add other properties based on your requirements
 }
 
@@ -58,6 +60,11 @@ const RenderSummaryCompleted = () => {
         (mode) => mode.id === Number(data.trans_mode),
     )
 
+    const pricePerDocument = selectedMode
+        ? parseFloat(selectedMode.price || '0')
+        : parseFloat(selectedDeliverable?.price || '0')
+    const totalPrice = pricePerDocument * Number(data?.num_doc || 0)
+
     const goToHome = () => {
         router.push('/dashboard')
     }
@@ -82,12 +89,12 @@ const RenderSummaryCompleted = () => {
                                     className="flex items-center py-1 justify-between"
                                     key={index}
                                 >
-                                    <p className="text-sm italic">
+                                    <p className="text-sm italic font-bold">
                                         {el.label} :
                                     </p>
-                                    <p className="font-normal">
+                                    <p className="font-normal text-sm">
                                         {el.label === 'Amount' ? (
-                                            `XAF ${formattedValue}`
+                                            `XAF ${data.scan_copy ? totalPrice + Number(selectedDeliverable?.scan_copy) : totalPrice}`
                                         ) : el.label === 'Request ID' ? (
                                             `${formattedValue}`
                                         ) : el.label === 'Payment mode' ? (
