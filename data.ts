@@ -188,25 +188,41 @@ export const requestData = [
         title: 'Transcript',
         id: '#12345',
         status: 'in progress',
-        price: 'XAF3,000'
+        price: 'XAF3,000',
+        available_status: ['Pending', 'Accepted'],
+        delivrable: {
+            name: 'Deliverable Name',
+        },
     },
     {
         title: 'English Proficiency',
         id: '#12345',
         status: 'completed',
-        price: 'XAF3,000'
+        price: 'XAF3,000',
+        available_status: ['Pending', 'Accepted'],
+        delivrable: {
+            name: 'Deliverable Name',
+        },
     },
     {
         title: 'Transcript',
         id: '#12345',
         status: 'in progress',
-        price: 'XAF3,000'
+        price: 'XAF3,000',
+        available_status: ['Pending', 'Accepted'],
+        delivrable: {
+            name: 'Deliverable Name',
+        },
     },
     {
         title: 'English Proficiency',
         id: '#12345',
         status: 'completed',
-        price: 'XAF3,000'
+        price: 'XAF3,000',
+        available_status: ['Pending', 'Accepted'],
+        delivrable: {
+            name: 'Deliverable Name',
+        },
     },
 ]
 
