@@ -17,7 +17,7 @@ const Nav = () => {
                 dispatch(setUser(user))
             }
         }
-    }, [])
+    }, [dispatch])
     const userData =
         typeof localStorage !== 'undefined' && localStorage.getItem('user')
 

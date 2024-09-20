@@ -1,7 +1,13 @@
+import NavBarAgent from '@/components/nav-bar-agent/NavBarAgent'
 import React from 'react'
 
-const PageLayout = () => {
-    return <div></div>
+const PageLayout = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <>
+            <NavBarAgent />
+            <main>{children}</main>
+        </>
+    )
 }
 
 export default PageLayout

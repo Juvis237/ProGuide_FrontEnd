@@ -1,13 +1,14 @@
+'use client'
 import React from 'react'
 import Header from '../header/Header'
 import Paragraph from '../paragraph/Paragraph'
 import { Button } from '../ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAppSelector } from '@/lib/hook'
 
 const RequestNow = () => {
-    const userData =
-        typeof localStorage !== 'undefined' && localStorage.getItem('user')
+    const userData = useAppSelector((state) => state.user.user)
     return (
         <div className="request-now-bg px-4 mt-8 flex justify-center items-center min-h-[250px] flex-col relative">
             <Image
@@ -23,7 +24,7 @@ const RequestNow = () => {
                     classes="text-secondary font-bold text-xl text-center"
                 />
                 <Paragraph
-                    content="Delve into a world od little or no stress and have unforgettable experience"
+                    content="Delve into a world of little or no stress and have unforgettable experience"
                     classes="text-center text-sm"
                 />
                 <Button className="text-white bg-secondary p-6" asChild>

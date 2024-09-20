@@ -7,7 +7,7 @@ const AgentStats = () => {
             <div className="bg-white box-shadow flex flex-col justify-center items-center px-4 sm:px-6 py-5 gap-2 w-full h-auto rounded-2xl">
                 <div className="flex gap-3 items-center">
                     <div className="w-10 h-10 rounded-full bg-secondary-foreground flex items-center justify-center">
-                        <StarIcon className="text-secondary h-6 w-6" />
+                        <StarIcon className="text-secondary h-5 w-5" />
                     </div>
                     <small className="">
                         <p className="text-xl font-bold">0</p>
@@ -21,7 +21,7 @@ const AgentStats = () => {
             <div className="bg-white box-shadow flex flex-col justify-center items-center px-4 sm:px-6 py-5 gap-2 w-full h-auto rounded-2xl">
                 <div className="flex gap-3 items-center">
                     <div className="w-10 h-10 rounded-full bg-secondary-foreground flex items-center justify-center">
-                        <DocumentIcon className="text-secondary h-6 w-6" />
+                        <DocumentIcon className="text-secondary h-5 w-5" />
                     </div>
                     <p className="text-2xl font-bold">29</p>
                 </div>

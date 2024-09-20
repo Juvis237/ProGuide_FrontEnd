@@ -1,4 +1,5 @@
 import {
+    faBarsProgress,
     faCodePullRequest,
     faFile,
     faHouse,
@@ -141,25 +142,25 @@ export const dashboardLink = [
         name: 'My Docs',
     },
 ]
-export const dashboardLink2 = [
+export const dashboardLinkAgent = [
     {
         icon: faHouse,
-        link: '/dashboard',
+        link: '/agent',
         name: 'Dashboard',
     },
     {
-        icon: faCodePullRequest,
-        link: '/progress',
+        icon: faBarsProgress,
+        link: '/agent/progress',
         name: 'Progess',
     },
     {
         icon: faUpload,
-        link: '/upload',
+        link: '/agent/upload',
         name: 'Upload',
     },
     {
         icon: faFile,
-        link: '/my-docs',
+        link: '/agent/my-docs',
         name: 'My Docs',
     },
 ]
@@ -187,21 +188,25 @@ export const requestData = [
         title: 'Transcript',
         id: '#12345',
         status: 'in progress',
+        price: 'XAF3,000'
     },
     {
         title: 'English Proficiency',
         id: '#12345',
         status: 'completed',
+        price: 'XAF3,000'
     },
     {
         title: 'Transcript',
         id: '#12345',
         status: 'in progress',
+        price: 'XAF3,000'
     },
     {
         title: 'English Proficiency',
         id: '#12345',
         status: 'completed',
+        price: 'XAF3,000'
     },
 ]
 

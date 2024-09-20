@@ -21,7 +21,7 @@ const AgentBalanceCard = () => {
     //     ) : null
     // }
     return (
-        <div className="dashboard-summary py-4 mt-8 rounded-md flex justify-center items-center flex-col gap-3">
+        <div className="bg-[#FFAC1CC2] py-4 mt-8 rounded-md flex justify-center items-center flex-col gap-3">
             <p className="font-semibold ">Account Balance</p>
             <div className="flex justify-center gap-3 items-center">
                 <div className="pt-2">{hiddenPart}</div>
