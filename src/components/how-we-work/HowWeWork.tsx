@@ -13,7 +13,7 @@ const HowWeWork = () => {
                     classes="text-secondary text-center text-2xl py-3 font-bold"
                 />
                 <Paragraph
-                    content="The process of obtianing an academic document through is is very seamless "
+                    content="The process of obtaining an academic document through this is very seamless."
                     classes="text-white text-center mb-4"
                 />
                 {howWeWorkData.map((item, index) => (

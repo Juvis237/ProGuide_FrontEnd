@@ -51,9 +51,12 @@ const ContactSupportContainer = () => {
                     <small className="text-[0.65rem] text-center block">
                         Frequently asked questions
                     </small>
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                     <Header title="Top questions" classes="pt-4 font-bold" />
-                    <Accordion type="single" collapsible className="w-full">
+                    <div className="flex justify-center items-center">
+                        <Header title="No FAQ" classes="pt-12 pb-24 font-bold" />
+                    </div>
+                    {/* <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className="text-[0.8rem]">
                                 How long does certificate take to be ready?
@@ -87,7 +90,7 @@ const ContactSupportContainer = () => {
                                 vulputate.
                             </AccordionContent>
                         </AccordionItem>
-                    </Accordion>
+                    </Accordion> */}
                 </section>
             </div>
         </section>
