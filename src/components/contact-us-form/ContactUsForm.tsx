@@ -69,12 +69,9 @@ const ContactUsForm = () => {
                 },
             )
             const response = await request.json()
-            const { message, user, success } = response
+            const { message, success } = response
 
             if (success) {
-                if (typeof localStorage !== 'undefined') {
-                    localStorage.setItem('user', JSON.stringify(user))
-                }
                 toast({
                     variant: 'default',
                     title: 'Request Successfully submitted',
